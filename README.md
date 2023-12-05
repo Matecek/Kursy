@@ -1,2 +1,2 @@
 # Kursy
-Wszystkie moje dotychczasowe kursy
+Są tutaj moje wszystkie kursy podzielone w branch.
