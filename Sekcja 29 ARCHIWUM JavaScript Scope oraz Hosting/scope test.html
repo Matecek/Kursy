@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        /*
+        Zadanie z scope
+            1) Stwórz zmienne globalne name i surname 
+               z dowolnymi wartościami. W całym zadaniu korzystaj
+               tylko z let.
+            2) Stwórz funkcję test z parametrem name, wewnątrz 
+               napisz nową zmienną lokalną przesłaniającą surname z jakąś
+               wartością. Pokaż w konsoli name i surname.
+               Następnie sprawdź w if czy name ma typ string
+               i wewnątrz stwórz kolejną nową zmienną przesłaniającą 
+               name z unikalną wartością. Pokaż w konsoli name
+               i surname w bloku if.
+               Po bloku if wyświetl w konsoli wartości name, surname
+            3) Wywołaj funkcję test() z unikalnym imieniem w programie.
+               Po wywołaniu wyświetl w konsoli wartości globalnego
+               name i surname.
+        */
+
+        let name = "Jan";
+        let surname = "Kowalski";
+
+        function test(name){
+            let surname = "Nowak";
+            console.log(name, surname);
+
+            if (typeof name === "string"){
+                let name = "Damian";
+                console.log(name, surname);
+            }
+
+            console.log(name, surname);
+            console.log(window.surname);
+        }
+
+        test("Daria");
+        console.log(name, surname);
+        </script>
+</body>
+</html>

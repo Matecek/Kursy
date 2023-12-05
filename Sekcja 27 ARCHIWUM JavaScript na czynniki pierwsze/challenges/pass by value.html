@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        /*
+            Zadanie na przekazanie danych w funkcji przez wartość
+            1) Napisz funkcję increaseSalary z dwoma parametrami:
+               money oraz bonus
+            2) W funkcji podnieś wartość money o 20%. 
+               Następnie zapisz, że funkcja zwraca sumę money i bonus.
+            3) Stwórz zmienną salary poza funkcją o wartości 5000
+            4) Wywołaj funkcję increaseSalary przekazując jako 
+               argument salary oraz 1000 jako bonus. Zachowaj
+               zwracaną wartość w zmiennej newSalary.
+            4) Pokaż w konsoli wartości: salary i newSalary,
+               ponieważ dane są przekazywane przez wartość salary
+               musi mieć wartość 5k, a newSalary odpowiednio większą
+               według implementacji funkcji. 
+        */
+       function increaseSalary(money, bonus) {
+            money = money + (money * 0.2);
+            return money + bonus;
+       }
+       let salary = 5000;
+       let newSalary = increaseSalary(salary, 1000)
+
+       console.log("salary: " + salary);
+       console.log("newSalary:" + newSalary);
+    </script>
+</body>
+</html>

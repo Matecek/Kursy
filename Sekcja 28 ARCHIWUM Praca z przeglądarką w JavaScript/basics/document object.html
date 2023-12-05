@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .current-page{
+            font-weight: bold;
+            background: yellow;
+        }
+    </style>
+</head>
+<body>
+    <ul>
+        <li class="menu-item current-page">Home</li>
+        <li class="menu-item">Projects</li>
+        <li class="menu-item">Contact</li>
+    </ul>
+
+    <article id="news">
+        <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Delectus, fugiat!</p>
+    </article>
+
+    <script>
+        let currentPage = document.querySelector("li.current-page");
+        //currentPage.style.fontWeight = "bold";
+
+        let menuItems = document.querySelectorAll("li.menu-item");
+        //console.log(menuItems);
+        let newCurrentPage = menuItems[1];
+        //newCurrentPage.style.fontWeight = "bold";
+
+        console.log(currentPage.classList);
+        currentPage.classList.remove("current-page");
+
+        //dodanie klasy css
+        newCurrentPage.classList.add("current-page");
+
+        let article = document.getElementById("news");
+        let h1 = document.createElement("h1");
+        h1.innerHTML = "Latest news:";
+        //article.appendChild(h1);
+        article.prepend(h1);
+
+        let liItems = document.getElementsByTagName("li");
+        for (let i = 0; i < liItems.length; i++){
+            let li = liItems[i];
+            li.innerHTML += " #" + i;
+        }
+    </script>
+</body>
+</html>

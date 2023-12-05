@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        /*
+        Zadanie: komputer - cena na bazie części
+        1) Stwórz obiekt computer jako literał obiektu z właściwościami:
+          - totalPrice z wartością początkową 0
+          - type jako PC
+          - parts będąca tablicą
+        2) Do parts dodaj obiekty reprezentujące części komputera,
+           każdy part ma mieć właściwości:
+           - type np z string obudowa
+           - name np SilentCase
+           - price np 200
+           W tablicy price zapisz kilka takich obiektów po przecinku
+           dla: obudowy, procesora i płyty głównej
+        3) Napisz metodę obiektu computer o nazwie calculatePrice,
+           która obliczy końcową cenę komputera na bazie części.
+           Cenę końcową zapisz w totalPrice obiektu computer
+        4) Oblicz cenę końcową i pokaż ją w konsoli
+        */
+
+        let computer = {
+            totalPrice: 0,
+            type: "PC",
+            parts: [
+                {
+                    type: "Obudowa",
+                    name: "SilentCase",
+                    price: 200
+                },
+                {
+                    type: "Procesor",
+                    name: "Intel",
+                    price: 2000
+                },
+                {
+                    type: "Płyta główna",
+                    name: "Gigabyte",
+                    price: 700
+                }
+            ],
+            calculatePrice: function(){
+                let totalPrice = 0;
+
+                for (let i = 0; i < this.parts.length; i++){
+                    const part = this.parts[i];
+                    totalPrice += part.price;
+                }
+                this.totalPrice = totalPrice;
+            }
+        };
+
+        computer.calculatePrice();
+        console.log("Cena komputera: "+ computer.totalPrice);
+    </script>
+</body>
+</html>

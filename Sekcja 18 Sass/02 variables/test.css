@@ -1,0 +1,14 @@
+body {
+  /* 
+      zmienna lokalna
+  */
+  background-color: green;
+  border: 1px solid red;
+  font-family: Tahoma, Helvetica;
+}
+
+div {
+  font-family: Tahoma;
+  border: 1px solid green;
+  border-top: 2px dotted red;
+}/*# sourceMappingURL=test.css.map */

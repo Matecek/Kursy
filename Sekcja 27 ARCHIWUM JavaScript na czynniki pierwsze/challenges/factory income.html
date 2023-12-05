@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        /*
+           Oblicz wyniki finansowe fabryki samochodów za poprzedni 
+           rok biorąc pod uwagę następujące dane:
+           soldCars = 1200  ilość sprzedanych samochodów
+           carPrice = 90000  cena końcowa auta
+
+           1) Wylicz przychód firmy z sprzedaży aut do zmiennej revenue
+           2) Oblicz do zmiennej factoryCosts koszty działania
+              fabryki, łącznie to 65% przychodu.
+           3) Oblicz koszt marketingu do marketingCost - 10% przychodu
+           4) Oblicz dochód fabryki czyli przychód minus koszty,
+              wartość zapisz w zmiennej income
+           5) Zmienna incomeTax to podatek fabryki od zysku, czyli
+              19% dochodu
+           6) Zmienna incomeAfterTax to dochód po odjęciu podatku
+           7) Podziel dochód po podatku przez 30000 akcji, jest to
+              zysk na akcje
+           8) Pokaż wartości obliczonych zmiennych w konsoli wraz z opisem
+              np "Koszty marketingu: 123456"
+        */
+
+        let soldCars = 1200;
+        let carPrice = 90000;
+        let revenue = soldCars * carPrice; //Przychody
+        console.log("Fabryka zarobiła: " + revenue);
+
+        let factoryCosts = revenue * 0.65;
+        console.log("Koszty działania: " + factoryCosts);
+
+        let marketingCost = revenue * 0.1;
+        console.log("Koszty marketingu: " + marketingCost);
+
+        let income = revenue - (factoryCosts + marketingCost);
+        console.log("Dochód firmy: " + income);
+
+        let incomeTax = income * 0.19;
+        console.log("Podatek fabryki: " + incomeTax);
+
+        let incomeAfterTax = income - incomeTax; //zysk
+        console.log("Dochód po odjeciu podatku: " + incomeAfterTax);
+
+        let incomePerShare = incomeAfterTax / 30000;
+        console.log("Zysk na akcje: " + incomePerShare);
+    </script>
+</body>
+</html>

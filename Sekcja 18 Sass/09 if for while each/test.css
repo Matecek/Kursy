@@ -1,0 +1,52 @@
+h1 {
+  font-size: 2.3rem;
+  color: red; }
+
+h2 {
+  font-size: 1.3rem; }
+
+h3 {
+  font-size: 0.96667rem; }
+
+h4 {
+  font-size: 0.8rem; }
+
+h5 {
+  font-size: 0.7rem; }
+
+h6 {
+  font-size: 0.63333rem; }
+
+Display-6 {
+  font-size: 2rem; }
+
+Display-5 {
+  font-size: 1.7rem; }
+
+Display-4 {
+  font-size: 1.4rem; }
+
+Display-3 {
+  font-size: 1.1rem; }
+
+Display-2 {
+  font-size: 0.8rem; }
+
+Display-1 {
+  font-size: 0.5rem; }
+
+.icon-danger {
+  display: inline-block;
+  color: red; }
+
+.icon-succes {
+  display: inline-block;
+  color: green; }
+
+.icon-warning {
+  display: inline-block;
+  color: yellow; }
+
+.icon-info {
+  display: inline-block;
+  color: blue; }

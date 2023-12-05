@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+
+    <script>
+        /*
+            1. Napisz funkcje findLargest ktora przyjmuje dwie liczby jako parametry num1 i num2. Funkcja musi pokazywac w konsoli informacje, ktora liczba jest wieksza oraz jej wartosc. np: "num1 jest wieksza liczba: 12" lub, ze obie liczby sa rowne.
+            Pamietaj aby uzyc if else if oraz esle.
+            2. Dodatkowo funkcja zwraca wieksza liczbe dzieki return
+            3. Sprawdz funkcje przekazujac wartosci 3 i 10, pokaz w konsoli zwrócona wartosc z funckji.
+            4. W ten sam sposob wsprawdz funkcje dla 12 i 7.
+        */
+
+        function findLargest(num1, num2){
+            if (num1 > num2) {
+                console.log("num1 jest wiekszą liczbą: " + num1);
+                return num1;
+            }else if (num1 == num2) {
+                console.log("Obie liczby są równe: " + num1);
+                return num1;
+            }else{
+                console.log("num2 jest wiekszą liczbą: " + num2);
+                return num2;
+            }
+        }
+
+        let v1 = findLargest(3,10);
+        console.log("Zwrócona wartość w v1: " + v1);
+
+        let v2 = findLargest(12,7);
+        console.log("Zwrócona wartość w v2: " + v2);
+    </script>
+</body>
+</html>

@@ -1,0 +1,80 @@
+.comment {
+    padding: 6px;
+    margin: 2px;
+
+    header {
+        font-size: 0.9rem;
+    }
+
+    .message {
+        border-top: 1px solid black;
+
+        .mobile & {
+            font-size: 1.1rem;
+        }
+    }
+
+    .message > p { /* selektor dziecka */
+        font-size: 1.1rem;
+        span {
+            font-style: italic;
+        }
+    } 
+
+    footer {
+        color: black;
+        .button {
+            background-color: silver;
+            color: black;
+        }
+    }
+}
+
+/* selektor brata */
+div + p {
+    font-size: 0.9rem;
+    color: blue;
+    span {
+        color: green;
+    }
+}
+
+/* selektor braci */
+div ~ p {
+    font-size: 0.6rem;
+    strong {
+        text-decoration: underline;
+    }
+} 
+
+a {
+    &.nav-item {
+        color: red;
+    }
+    &:hover {
+        color: green;
+    }
+    &:first-child {
+        text-transform: capitalize;
+    }
+    &[href^="mailto"] {
+        color: blue;
+    }
+}
+
+.container {
+    padding: 5px;
+    &-header {
+        color: black;
+        font-size: 1.2rem;
+    }
+
+    &-content {
+        color: blue;
+    }
+
+    &-footer {
+        font-size: 0.8rem;
+        border-top: 2px solid black;
+    }
+}

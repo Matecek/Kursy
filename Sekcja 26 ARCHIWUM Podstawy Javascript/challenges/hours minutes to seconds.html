@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        /*
+            Stwórz funkcje do konwersji czasu:
+            1. convertToSeconds przyjmująca ilość godzin oraz minut i zwracająca ilość sekund. Jako parametr funkcji zapisz: hours, minutes. Skonwertuj 3 godziny i 25 minut na sekundy, wynik pokaż w konsoli.
+            2. convertToHours przyjmująca parametr minutes oraz zwracająca ilość godzin. Skonwertuj 120 minut na godziny i pokaż wynik w konsoli.
+        */
+
+        function convertToSeconds(hours, minutes){
+            return hours * 3600 + minutes * 60;
+        } //Konwersja na sekundy pierwszym sposobem
+        let seconds = convertToSeconds(3, 25)
+        console.log("Konwersja na sekundy: " + seconds);
+
+        function convertToHours(minutes) {
+            hours = minutes / 60;
+            console.log("Konwersja na godziny: " + hours);
+        } //Konwersja na godziny drugim sposobem
+         
+        convertToHours(120);
+    </script>
+</body>
+</html>

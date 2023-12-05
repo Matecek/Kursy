@@ -1,0 +1,31 @@
+
+@mixin round-corners($radius: 5px) {
+    -moz-border-radius: $radius;
+    -webkit-border-radius: $radius;
+    border-radius: $radius;
+}
+
+div {
+    background-color: silver;
+    @include round-corners(7px); 
+}
+
+
+@mixin link {
+    font-style: italic;
+    &:hover {
+        text-decoration: underline;
+        color: red;
+    }
+}
+
+a {
+    color: blue;
+    @include link;
+}
+
+a.nav-item {
+    color: green;
+    @include link;
+}
+

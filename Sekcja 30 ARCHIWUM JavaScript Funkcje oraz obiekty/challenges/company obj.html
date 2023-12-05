@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        /* 
+            Zadanie: utworzenie literału obiektu company z pracownikami i metodami
+            1) Stwórz stałą company z właściwościami: name, address (obiekt z
+            city i street) oraz tablicą employees
+            2) Dodaj metodę addEmployee(email, job, salary) do obiektu company,
+            Jeśli email i job to nie łańcuchy znaków zwróć false. Dodatkowo 
+            email musi mieć @, a salary to liczba z wartością >= 4000.
+            Utwórz obiekt employee w funkcji z właściwościami jak parametry,
+            dodatkowo musi mieć metodę getInfo zwracającą tekst z danymi np:
+            "ania@example.com - admin, pensja: 10000", pamiętaj o this!
+            Dodaj obiekt pracownika do tablicy pracowników w company.
+            3) Dodaj metodę showEmployees w company, która pokaże pracowników
+            w konsoli, pamiętaj o wykorzystaniu metody getInfo() do pobrania
+            tekstu opisującego pracownika.
+            4) Dodaj metodę changeSalaries do company z parametrem 
+            percentageChange, która pozwoli zmienić procentowo pensję
+            pracowników np powiększyć o 15% każdemu z osobna.
+            5) Dodaj 4 pracowników:
+            ania@test.com, admin, 10000  i  adam@test.com, tester 8000
+            daniel@op.com, prog, 12000  i ola@test.com, Leader, 15000
+            6) Pokaż pracowników, zwiększ ich pensje o 15% i pokaż ich ponownie
+        */
+
+        let company = {
+            name: "abc",
+            address: {
+                city: "Cracow",
+                street: "Wilcza"
+            },
+            employees: [],
+        
+            addEmployee: function (email, job, salary) {
+                if (typeof email !== "string"
+                    || typeof job !== "string"
+                    || email.indexOf("@") === -1
+                    || typeof salary !== "number"
+                    || salary < 4000){
+                        console.log("Nieprawidłowe dane pracownika");
+                        return false;
+                    };
+
+                const employee = {
+                    email: email,
+                    job: job,
+                    salary: salary,
+                    getInfo: function (){
+                        return this.email + " - " + this.job + ", pensja: " + this.salary;
+                    }
+                };
+
+                this.employees.push(employee);
+                return true;
+            },
+
+            showEmployees: function (){
+                console.log("Pracownicy: " + this.name);
+
+                for (let i = 0; i < this.employees.length; i++){
+                    const e = this.employees[i];
+                    console.log(e.getInfo());
+                }
+            },
+
+            changeSalaries: function(percentageChange){
+                for(let i = 0; i < this.employees.length; i++){
+                    const e = this.employees[i];
+                    e.salary += e.salary * (0.01 * percentageChange);
+                }
+            }
+        };
+
+        company.addEmployee("ania@test.com", "admin", 10000);
+        company.addEmployee("adam@test.com", "tester", 8000);
+        company.addEmployee("daniel@op.com", "prog", 12000);
+        company.addEmployee("ola@test.com", "Leader", 15000);
+
+        company.showEmployees();
+        company.changeSalaries(15);
+        company.showEmployees();
+
+        
+    </script>
+</body>
+</html>

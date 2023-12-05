@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        function multiply(a, b, c){
+            /*
+            Druga opcja na wywołanie tej funkcji:
+                let result = a * b * c; 
+                return result; 
+            */
+            return a * b *c;
+        }
+
+        let multiplyResult = multiply(2, 3, 10);
+        console.log(multiplyResult);
+
+        let multiplyResult2 = multiply(4, 2, 12)
+        console.log(multiplyResult2);
+
+        // stwórz funkcje odejmowania (substract)
+        function substract(a, b) {
+            return a - b;
+        }
+
+        let substractResult = substract(10, 7)
+        console.log(substractResult);
+
+        function getSomeNumber() {
+            return 79;
+        }
+        
+        console.log(getSomeNumber()); //79
+
+        let money = 1000;
+        let interestRate = 0.05;
+
+        function calculateInvestmentResult(money, interestRate) {
+            return money + (money * interestRate);
+        }
+        let investmentResult = calculateInvestmentResult(money, interestRate);
+        console.log(investmentResult); //1050 zł
+
+        console.log(calculateInvestmentResult(2200, 0.045)); //2299 zł
+
+        //functio expression
+        let add10 = function(num){
+            return num + 10;
+        }
+
+        console.log(add10(15)); //25
+
+        add10 = function (num){
+            let sum = num +10;
+            console.log(sum);
+            return sum;
+        }
+
+        const sum = add10(20); //30
+        console.log(sum); //30
+
+        function downloadFile(fileName, onComplete, onError){
+            if (fileName.length > 5){
+                onComplete("success");
+            }else{
+                onError("Error!");
+            }
+        }
+
+        downloadFile("fileName123.txt",
+            function (str){
+                console.log("OnCoplete:", str);
+            },
+            function(str){
+                console.log("Error:", str);
+            }
+        )
+    </script>
+</body>
+</html>

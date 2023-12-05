@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        /*
+            Zadanie na referencje do obiektów
+            1) Stwórz obiekt, który opisuje samochód, zapisz go 
+               w zmiennej car1 z użyciem let. Wewnątrz tego 
+               obiektu wpisz właściwości: 
+               - brand z wartością Chevrolet,
+               - name z wartością Camaro
+               - year z datą 1966
+            2) Stwórz drugą zmienną car2 i przypisz do niej 
+               wartość z car1.
+            3) Wyświetl w konsoli właściwość brand która jest
+               w obiekcie w car2, ponieważ jest to referencja
+               do obiektu, więc powinna mieć wartość Chevrolet.
+            4) Dodaj do obiektu właściwość topSpeed jako 220, 
+               użyj do tego zmiennej car2. Pamiętaj, że operator 
+               kropki pozwala nie tylko na pobranie wartości z obiektu, 
+               ale dzięki niemu możemy dodać nową właściwość 
+               wraz z wartością np. car2.color = "green";
+            5) Pokaż w konsoli wartość topSpeed wykorzystując
+               zmienną car1. Powinna się pojawić informacja 220. 
+        */
+       let car1 = {
+            brand: "Chevrolet",
+            name: "Camaro",
+            year: 1966
+       };
+       let car2 = car1;
+       
+       console.log(car2.brand);
+
+       car2.topSpeed = 220;
+
+       console.log(car1.topSpeed);
+       
+    </script>
+</body>
+</html>

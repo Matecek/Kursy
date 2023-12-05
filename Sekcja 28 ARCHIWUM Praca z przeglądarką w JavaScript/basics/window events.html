@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        window.addEventListener("online", function(event){
+            console.log("Online: uzyskanie dostępu do internetu");
+        });
+
+        window.ononline = function(event){
+            console.log("Online: uzyskanie dostępu do internetu");
+        };
+
+        window.addEventListener("offline", function(event){
+            console.log("Offline: utrata dostępu do internetu");
+        });
+
+        window.onoffline = function(event){
+            console.log("Offline: utrata dostępu do internetu");
+        };
+
+        //focus
+        window.addEventListener("focus", function(event){
+            console.log("Focus: uzyskanie focus");
+        });
+
+        window.onfocus = function(event){
+            console.log("Focus: uzyskanie focus");
+        };
+
+        //blur - utrata focus okna
+        window.addEventListener("blur", function(event){
+            console.log("Blur: utrata focus");
+        });
+
+        window.onblur = function(event){
+            console.log("Blur: utrata focus");
+        };
+
+        //onload
+        window.addEventListener("load", function(event){
+            console.log("Load: start strony");
+        });
+
+        window.onload = function(event){
+            console.log("Load: start strony");
+        };
+
+        //resize
+        window.addEventListener("rezise", function(event){
+            console.log("Resize: ", innerWidth, innerHeight);
+        });
+
+        window.onresize = function(event){
+            console.log("Resize: ", innerWidth, innerHeight);
+        };
+    </script>
+</body>
+</html>

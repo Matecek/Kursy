@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 5px;
+        }
+
+        p.mouse-over{
+            background-color: yellow;
+        }
+        
+        div{
+            border: 1px solid black;
+            height: 17px;
+        }
+    </style>
+</head>
+<body>
+
+    <p>Lorem ipsum dolor sit amet.</p>
+
+    <input type="text">
+    <div></div>
+
+    <script>
+        window.onload = function(){
+            startApp();
+        }
+
+        function startApp(){
+            let p = document.querySelector("p");
+            
+            p.addEventListener("mouseenter", function(event){
+                p.classList.add("mouse-over");
+            });
+
+            p.addEventListener("mouseleave", function(event){
+                p.classList.remove("mouse-over");
+            });
+
+            let input = document.querySelector("input");
+            let div = document.querySelector("div");
+
+            input.addEventListener("input", function(event){
+                //div.innerHTML = input.value; - to samo co niżej!
+                div.innerHTML = event.target.value;
+            })
+        }
+    </script>
+</body>
+</html>

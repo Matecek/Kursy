@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        /*
+            Zadanie String replace
+            1) Stwórz funkcję cleanText, która będzie czyścić                 
+               przekazany tekst z określonych słów.
+            2) Użyj funkcję replace do zamiany danego słowa na 
+               wykropkowane, które wielokrotnie może pojawić się
+               w przekazanym łańcuchu. Dla uproszczenia będziesz
+               zamieniać nazwy języków programowania ;)  np.
+               php zmienisz na ***, java na **** itd
+            3) Pamiętaj aby z replace użyć prostego wyrażenia 
+               regularnego razem z modyfikatorem gi co pozwoli
+               na zamianę wielu wystąpień danego słowa
+               niezależnie od ilości znaków np /php/gi
+            4) Zastąp następujące słowa kluczowe:
+               JavaScript, java, php, html, css
+            4) Zwróć wyczyszczony tekst z funkcji cleanText.
+            5) Wywołaj funkcję na następującym lub podobnym tekście:
+               `Programowanie zacząłem z językiem php, następnie
+                poznałem: html i css, ale obecnie skupiam się na
+                JavaScript`
+                Wynik pokaż w konsoli.
+        */
+
+        function cleanText(text){
+            text = text.replace(/javascript/gi, "**********");
+            text = text.replace(/php/gi, "***");
+            text = text.replace(/java/gi, "****");
+            text = text.replace(/html/gi, "*".repeat(4));
+            text = text.replace(/css/gi, "***");
+
+            return text;
+        }
+
+        const content = `
+Programowanie zacząłem z językiem php, nastepnie poznalem: 
+html i css, ale obecnie skupiam sie na JavaScript
+        `;
+
+        let newContent = cleanText(content);
+        console.log(newContent);
+    </script>
+</body>
+</html>

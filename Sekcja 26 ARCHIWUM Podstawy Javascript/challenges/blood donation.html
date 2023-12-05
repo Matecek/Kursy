@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        /*
+            Test na oddanie krwi, trzeba mieć minimum 18 lat i 50 kg
+            1. Stwórz dwie zmienne age z wartościa 18 i weight z 50
+            2. Dodaj instrukcje if else sprawdzającą wiek czy jest równy lub powyżej 18. Jeżeli warunek nie będzie spełniony to w bloku else w konsoli powiadom użytkownika że nie ma 18 lat.
+            3. Jeśli warunek 18 lat jest spełniony dodaj wewnątrz kolejny blok if else sprawdzający wagę. Jeśli waga jest równa 50 lub więcej to w konsoli pokaż informację że osoba może oddać krew. W bloku else zapisz, że użytkownik nie może oddać krwi, bo ma za mała wagę.
+        */
+
+        let age = 18;
+        let weight = 50;
+
+        if (age >= 18) {
+            if (weight >= 50) {
+                console.log("Możesz oddać krew");
+            } else{
+                console.log("Twoja waga jest za niska");
+            }
+        } else{
+            console.log("Jesteś za młody");
+        }
+    </script>
+</body>
+</html>

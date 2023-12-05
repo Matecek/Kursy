@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        /*
+            Funkcje String: trim, concat, toUpperCase, toLowerCase
+            1) Napisz funkcję getUserInformation z trzema parametrami:
+               name, surname, job
+            2) W getUserInformation zmień imię i nazwisko na duże litery,
+               zawód na małe, dodatkowo wyczyść te wartości 
+               z białych znaków na ich początku i końcu
+            3) Użyj literału szablonu aby w prosty sposób osadzić
+               dzięki placeholderm ( ${} ) imię i nazwisko uzyskując np:
+               `imię: ANIA, nazwisko: KOWALSKA`
+            4) Do powstałego łańcucha znaków dodaj za pomocą concat
+               kolejny opisujący pracę użytkownika
+               Wynikowy łańcuch powinien wyglądać no tak:
+               "imię: Ania, nazwisko: KOWALSKA, zawód: programistka"
+            5) Zwróć powstały tekst z funkcji
+            6) Wywołaj funkcję getUserInformation na następujących 
+               danych i pokaż wynik w konsoli:
+               - Ania, Kowalska, Programistka
+               - Daniel, Lis, Administrator
+        */
+
+        function getUserInformation(name, surname, job){
+            name = name.toUpperCase().trim();
+            surname = surname.toUpperCase().trim();
+            job = job.trim().toLowerCase();
+
+            let text = `Imię: ${name}, nazwisko: ${surname}, `;
+            text = text.concat(`zawód: ${job}.`);
+
+            return text;
+        }
+
+        let user1 = getUserInformation("Ania", "Kowalska", "Programistka");
+        console.log(user1);
+        let user2 = getUserInformation("Daniel", "Lis", "Administrator");
+        console.log(user2);
+    </script>
+</body>
+</html>

@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        /*
+            Zadanie z modulo: czy liczba jest parzysta czy nieparzysta
+            Pamiętaj że korzystając z modulo i sprawdzając czy reszta
+            z dzielenia przez 2 równa jest zero to oznacza, że liczba
+            jest parzysta. Czyli zapis:
+             liczba % 2 
+            zwraca resztę z dzielenia liczby przez 2.
+
+            Stwórz funkcję isEven(num) która zwróci true jeśli liczba
+            jest parzysta, false jeśli nieparzysta, skorzystaj 
+            z modulo.
+            Przetestuj liczby: 12, 7, 33, 24
+        */
+
+        function isEven(num){
+            if (num % 2 ==0){
+                return true;
+            }else return false;
+        }
+
+        function isEven2(num){
+            return num %2 ==0;
+        }
+
+        console.log(12, isEven(12));
+        console.log(7, isEven(7));
+        console.log(33, isEven(33));
+        console.log(24, isEven(24));
+    </script>
+</body>
+</html>

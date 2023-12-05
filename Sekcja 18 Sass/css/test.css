@@ -1,0 +1,76 @@
+/*
+$color: green; // zmienna globalna
+$fontFamily: Arial, Tahoma, sans-serif;
+
+body{
+    //
+        zmienna lokalna
+    //
+    $newColor: red !global;
+    $fontFamily: Tahoma !global;
+    background-color: $color;
+    border: 1px solid $newColor;
+    font-family: $fontFamily, Helvetica;
+}
+
+div{
+    font-family: $fontFamily;
+    border: 1px solid $color;
+    border-top: 2px dotted $newColor;
+}
+*/
+.comment {
+  padding: 6px;
+  margin: 2px; }
+  .comment header {
+    font-size: 0.9rem; }
+  .comment .message {
+    border-top: 1px solid black; }
+    .mobile .comment .message {
+      font-size: 1.1rem; }
+  .comment .message > p {
+    /* selektor dziecka */
+    font-size: 1.1rem; }
+    .comment .message > p span {
+      font-style: italic; }
+  .comment footer {
+    color: black; }
+    .comment footer .button {
+      background-color: silver;
+      color: black; }
+
+/* selektor brata */
+div + p {
+  font-size: 0.9rem;
+  color: blue; }
+  div + p span {
+    color: green; }
+
+/* selektor braci */
+div ~ p {
+  font-size: 0.6rem; }
+  div ~ p strong {
+    text-decoration: underline; }
+
+a.nav-item {
+  color: red; }
+
+a:hover {
+  color: green; }
+
+a:first-child {
+  text-transform: capitalize; }
+
+a[href^="mailto"] {
+  color: blue; }
+
+.container {
+  padding: 5px; }
+  .container-header {
+    color: black;
+    font-size: 1.2rem; }
+  .container-content {
+    color: blue; }
+  .container-footer {
+    font-size: 0.8rem;
+    border-top: 2px solid black; }

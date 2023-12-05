@@ -1,0 +1,26 @@
+$basic-color: red;
+
+.grayscale {
+    background-color: grayscale($basic-color);
+}
+
+.desaturate {
+    background-color: desaturate($basic-color, 40%);
+}
+
+.saturate {
+    background-color: saturate($basic-color, 50%);
+}
+
+.lighten {
+    background-color: lighten($basic-color, 40%);
+}
+
+.darken {
+    background-color: darken($basic-color, 40%);
+}
+
+.mix {
+    background-color: mix($basic-color, green);
+}
+

@@ -1,0 +1,24 @@
+.alert {
+    border: 1px solid black;
+    color: black;
+    margin: 0.5rem;
+    padding: 0.5rem;
+}
+
+.alert-success {
+    @extend .alert;
+    color: green;
+    border: 2px dotted green;
+}
+
+.alert-danger {
+    @extend .alert;
+    color: red;
+    border-color: red;
+}
+
+.alert-warning {
+    @extend .alert;
+    color: yellow;
+    border-color: yellow;
+}

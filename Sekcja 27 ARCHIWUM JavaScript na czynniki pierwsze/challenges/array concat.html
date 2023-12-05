@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        /*
+            Zadanie z concat
+            1) Zrób funkcje createSchoolGroup(groupLetter, numGroups)
+              przyjmującą parametr oznaczający literę klasy 
+              w szkole np "a", "b". Natomiast numGroups określa 
+			  ilośc klas.  Funkcja zwraca tablicę klas w szkole 
+			  np parametry "a", 3 powinny zwrócić 
+              tablicę: [1a, 2a, 3a]
+              Natomiast "c", 5 stworzy [1c, 2c, 3c, 4c, 5c]
+              Potrzeba zatem pętli z ilością iteracji z numGroups
+              i w każdej iteracji do wynikowej tablicy dodawana jest 
+              kolejna klasa.
+            2) Stwórz 3 serie klas dla szkoły z następujących argumentów:         
+              - "a", 3
+              - "b", 6
+              - "c", 8
+              Zapisz wynikowe tablice w zmiennych
+            3) Połącz wszystkie tablice za pomocą concat w jedną tablicę,
+              pokaż ją w konsoli.
+        */
+
+        function createSchoolGroup(groupLetter, numGroups){
+            let arr = [];
+
+            for (let i = 1; i <= numGroups; i++){
+                arr.push(i + groupLetter);
+            }       
+            return arr;
+        }
+
+        let group1 = createSchoolGroup("a", 3)
+        let group2 = createSchoolGroup("b", 6)
+        let group3 = createSchoolGroup("c", 8)
+
+        let schoolGroups = group1.concat(group2).concat(group3);
+
+        console.log(schoolGroups);
+    </script>
+</body>
+</html>

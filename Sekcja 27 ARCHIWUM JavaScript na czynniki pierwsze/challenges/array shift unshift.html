@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        /*
+            Zadanie: array shift unshift
+            1) Stwórz tablicę reprezentującą samochody
+               z elementami: dodge, chevy, gmc, pontiac, acura, toyota          
+               Tablica reprezentuje parking dilera samochodów.
+            2) Jako diler aut pozbądź się pierwszych trzech 
+               samochodów z parkingu i wyświetl je w konsoli jako
+               sprzedane.
+            3) Dodaj na koniec kolejki/tablicy do sprzedania kolejne
+               auta: nissan, porsche, merc
+            4) Okazało się że jeden klient zrezygnował  
+               z zakupionego auta, dodaj na początek tablicy gmc.
+        */
+
+        const cars = ["dodge", "chevy", "gmc", "pontiac", "acura", "toyota"];
+
+        console.log("Sprzedany", cars.shift());
+        console.log("Sprzedany", cars.shift());
+        console.log("Sprzedany", cars.shift());
+
+        cars.push("nissan");
+        cars.push("porsche");
+        cars.push("merc");
+
+        cars.unshift("gmc");
+
+        console.log(cars);
+    </script>
+</body>
+</html>

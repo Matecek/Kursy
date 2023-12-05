@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        /*
+            1.  Stwórz zmienną numbers z wartościami w tablicy od 1 do  6.
+                Wykorzystaj pętle while w której przejdziesz po tablicy od początku, każda pobraną wartośc z tablicy pomnóż dwukrotnie i wyświetl w konsoli.
+            2.  Dodaj zmienną names jako tablice imion: Ania, Ola,      Kasia, Olek i Rafał. Następnie wyświetl imiona od początku  do końca w pętli for. Później wyświetl ponownie imiona, ale tym razem od końca również w pętli for. 
+        */
+
+        let numbers = [1,2,3,4,5,6];
+        let i = 0;
+
+        while (i < numbers.length) {
+            console.log(numbers[i] * 2);
+            i++;
+        };
+
+        let names = ["Ania", "Ola", "Kasia", "Olek", "Rafał"];
+
+        for (let j = 0; j < names.length; j++) {
+            console.log(names[j]);
+        };
+
+        for (let k = names.length - 1; k >= 0; k--) {
+            let el = names[k];
+            console.log(el);
+        };
+    </script>
+</body>
+</html>

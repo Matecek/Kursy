@@ -1,0 +1,19 @@
+$color: green; // zmienna globalna
+$fontFamily: Arial, Tahoma, sans-serif;
+
+body {
+    /* 
+        zmienna lokalna
+    */
+    $newColor: red !global;
+    $fontFamily: Tahoma !global;
+    background-color: $color;
+    border: 1px solid $newColor;
+    font-family: $fontFamily ,Helvetica;
+}
+
+div {
+    font-family: $fontFamily;
+    border: 1px solid $color; 
+    border-top: 2px dotted $newColor;
+}

@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        /*
+            String - funkcja slice, zadanie:
+            1) Napisz funkcję getEmailParts przyjmującą
+               parametr email.
+            2) Wykorzystaj funkcję slice aby pobrać części adresu 
+               email i zapisz je w stałych:
+               - user -od początku emaila do ostatniego znaku przed @                        
+               - domainName - tekst za @ i przed kropką
+               - domainExt - tekst za ostatnią kropką do końca
+            3) Zwróć obiekt z funkcji z właściwościami jak powyższe
+               zmienne. Pamiętaj aby użyć indexOf aby określić
+               pozycję indeksu małpy w email, jeśli go nie ma 
+               zwróć null z funkcji, podobnie z kropką.
+            4) Przetestuj funkcję na emailu:
+               ola@domena.com
+        */
+
+        function getEmailParts(email){
+            const monkeyInd = email.indexOf("@");
+            if (monkeyInd == -1) return null;
+
+            const dotInd = email.indexOf(".", monkeyInd);
+            if (dotInd == -1) return null;
+
+            const user = email.slice(0, monkeyInd);
+            const domainName = email.slice(monkeyInd +1, dotInd);
+            const domainExt = email.slice(dotInd +1, name.length);
+
+            return {
+                user: user,
+                domainName: domainName,
+                domainExt: domainExt
+            }
+        }
+
+        console.log(getEmailParts("ola@domena.com"));
+    </script>
+</body>
+</html>

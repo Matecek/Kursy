@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        /*  
+            1) Stwórz zmienną intervalId z wartością null, czyli
+               intencjonalnie wskazuje, że zmienna nie ma wartości.
+               W niej później przechowasz identyfikator timera 
+               zwróconego przez setInterval.
+            2) Wykorzystaj funkcję addEventListener i podepnij 
+               funkcję anonimową pod zdarzenie load. Napisz w konsoli
+               że program rozpoczął swoje działanie.
+               Dodatkowo wywołaj setInterval aby pokazać w konsoli 
+               wymiary okna z wykorzystaniem: innerWidth oraz innerHeight. 
+               Pamiętaj o zapisaniu identyfikatora zwracanego przez 
+               setInterval() do zmiennej intervalId.
+            3) Użyj addEventListener z zdarzeniem focus i pokaż
+               informację w konsoli, że okno uzyskało focus. 
+            3) Zapisz wyrażenie funkcyjne z event handlerem onblur
+               w którym zakończysz działanie timera co sekundę
+               z drugiego punktu dzięki funkcji clearInterval, 
+               gdy okno przeglądarki straci focus. 
+               Przejdź z strony www do narzędzia developerów dzięki
+               czemu informacja o wymiarach okna już nie będzie się
+               pojawiać.
+        */
+
+        let intervalId = null;
+
+        window.addEventListener("load", function(event){
+            console.log("Program rozpoczął swoje działanie");
+            intervalId = setInterval(function(){
+                console.log(innerWidth, innerHeight);
+            }, 1000);
+        });
+
+        window.addEventListener("focus", function(event){
+            console.log("Focus na stronie");
+        });
+
+        window.onblur = (function(event){
+            clearInterval(intervalId);
+        });
+    </script>
+</body>
+</html>

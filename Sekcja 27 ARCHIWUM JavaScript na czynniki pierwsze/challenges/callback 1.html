@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        /*
+            Zadanie z callback
+            1) Napisz funkcję changeArr(arr, callback), przyjmuje 
+               tablicę liczb po których przechodzi z pętlą for.
+               W każdej iteracji pętli wywołany jest callback do 
+               którego przekazana jest aktualna wartość z tablicy.
+               Callback zwróci nową wartość, którą pokarzesz w konsoli.
+            2) Wywołaj changeArr przekazując tablicę [1,2,3,4,5,6],
+               natomiast jako callback przekaż funkcję anonimową
+               przyjmującą parametr num. Wewnątrz num jest pomnożone 
+               razy dwa i zwracana jest nowa wartość.
+        */
+
+        function changeArr(arr, callback) {
+            for (let i = 0; i < arr.length; i++) {
+                const v = arr[i];
+                const result = callback(v);
+                console.log(result);
+            }
+        }
+
+        changeArr([1,2,3,4,5,6], function (num) {
+            return num * 2;
+        });
+    </script>
+</body>
+</html>

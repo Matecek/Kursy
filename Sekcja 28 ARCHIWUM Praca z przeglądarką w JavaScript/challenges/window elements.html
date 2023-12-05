@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        /*
+            Zadanie z window
+            1) Skorzystaj z prompt() aby pobrać od użytkownika ilość
+               godzin, które spędza codziennie średnio przy komputerze.
+               Możesz skorzystać z liczby całkowitej lub dziesiętnej.
+               Pamiętaj, że w pierwszym przypadku skonwertujesz liczbę
+               z użyciem parseInt(), a dla dziesiętnej użyj parseFloat().
+               Podziel pobraną liczbę przed 2 i poinformuj użytkownika,
+               że powinien ograniczyć się do uzyskanej wartości godzin.
+            2) Użyj funkcji setInterval() do wywołania funkcji anonimowej
+               w której co sekundę pokażesz dwie wartości w konsoli:
+               innerWidth oraz innerHeight
+               Następnie w narzędziach developerów zaobserwuj jak przy
+               zmianie wielkości okna przeglądarki zmieniają się
+               wartości wielkości okna.
+        */
+
+        const hoursStr = prompt("Podaj liczbę godzin którą spędzasz przed komputerem");
+        const hoursNum = parseInt(hoursStr);
+
+        console.log("Powinieneś spedzać " + hoursNum / 2 + " godzin/y dziennie");
+
+        setInterval(function(){
+            console.log(innerWidth, innerHeight);
+        }, 1000);
+    </script>
+</body>
+</html>

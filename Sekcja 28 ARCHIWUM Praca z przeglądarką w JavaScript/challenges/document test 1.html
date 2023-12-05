@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .text-content{
+            border: 1px solid black;
+        }
+    </style>
+</head>
+<body>
+    <div id="content">
+        <p>Lorem, ipsum.</p>
+        <p>Lorem, ipsum.</p>
+        <p>Lorem, ipsum.</p>
+        <p>Lorem, ipsum.</p>
+        <p>Lorem, ipsum.</p>
+    </div>
+    <script>
+        /*  
+            1) W html dodaj element div z id jako "content"
+            2) Wewnątrz div dodaj 5 elementów p z tekstem 
+               "lorem ipsum"
+            3) Dodaj tag script za wpisanym kodem html
+            4) W JavaScript pobierz listę elementów p, korzystając
+               z document.getElementsByTagName(), w pętli for dla
+               każdego p:
+               - dodaj klasę css "text-content". Użyj 
+                 p.classList.add("nazwa-klasy")
+               - dodaj na koniec treści elementu numer indeksu pętli
+                 korzystając z innerHTML
+            5) Dodaj tag style w sekcji head kodu html i napisz
+               styl dla klasy text-content z border: 1px solid black
+            6) Pobierz div z użyciem getElementById() i zmień kolor
+               background na żółty. 
+        */ 
+
+        let pList = document.getElementsByTagName("p");
+
+        for (let i = 0; i < pList.length; i++){
+            const p = pList[i];
+            p.classList.add("text-content");
+            p.innerHTML += " " + i;
+        }
+
+        const div = document.getElementById("content");
+        div.style.backgroundColor = "yellow";
+    </script>
+</body>
+</html>

@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            background-color: black;
+        }
+
+        .meme-div{
+            margin: auto;
+            width: 50%;
+            height: 50%;
+        }
+        .meme-title, .meme-footer{
+            padding: 1em;
+            font-family: Arial, Helvetica, sans-serif;
+            color: white;
+            text-align: center;
+        }
+        .meme-img{
+            max-width: 100%;
+            max-height: 100%;
+        }
+    </style>
+</head>
+<body>
+    <div class="meme-div">
+        <div class="meme-title"></div>
+            <div>
+                <img class="meme-img" src="" alt="">
+            </div>
+            <div class="meme-footer">
+                Data from https://api.imgflip.com/get_memes
+            </div>
+    </div>
+
+    <script>
+        window.onload = function(){
+            memeApp.loadData();
+        }
+
+        let memeApp = {
+            memeData: null,
+            memeNumber: 0,
+            memeTitelDomEl: null,
+            memeImgDomEl: null,
+
+            loadData: function(){
+                fetch("https://api.imgflip.com/get_memes")
+                .then(response => response.json())
+                .then(data => memeApp.dataReady(data))
+            },
+            dataReady: function(data){
+                console.log(data);
+                memeApp.memeData = data.data.memes;
+                memeApp.memeTitelDomEl = document.getElementsByClassName("meme-title")[0];
+                memeApp.memeImgDomEl = document.querySelector(".meme-img");
+
+                document.addEventListener("keydown", function(e){
+                    switch(e.keyCode){
+                        case 37:
+                            console.log("left");
+                            memeApp.previousMeme();
+                            break;
+                        case 38:
+                            console.log("up");
+                            break;
+                        case 39:
+                            console.log("right");
+                            memeApp.nextMeme();
+                            break;
+                        case 40:
+                            console.log("down");
+                            break;
+                    }
+                })
+
+                this.nextMeme();
+            },
+            nextMeme: function(){
+                this.memeNumber++;
+                this.setDOMData();
+
+                if (this.memeNumber >= this.memeData.length) this.memeNumber = 0;
+            },
+            previousMeme: function(){
+                this.memeNumber--;
+                this.setDOMData();
+
+                if (this.memeNumber < 1) this.memeNumber = this.memeData.length;
+            },
+            setDOMData: function(){
+                let imgData = this.memeData[this.memeNumber];
+                this.memeTitelDomEl.innerHTML = imgData.name;
+                this.memeImgDomEl.src = imgData.url;
+
+                document.title = "Meme #" + this.memeNumber;
+            }
+        }
+    </script>
+</body>
+</html>

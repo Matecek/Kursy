@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        /*
+            Zadanie z fetch
+            1) Użyj fetch aby pobrać dane z serwera swapi
+               dla postaci r2, skorzystaj z adresu:
+               https://swapi.dev/api/people/3/ 
+            2) Pamiętaj o użyciu fetch jak na slajdach np:
+                fetch("https://swapi.dev/api/planets/1/")
+                .then(function (response) {
+                    return response.json();
+                })
+                .then(processData);
+            3) W processData() pokaż dane z serwera, 
+               dodatkowo pokaż wartości pól zwróconych
+               danych:
+               - name - pełne imię postaci
+               - height - wysokość postaci
+               - mass - waga 
+               - eye_color - kolor oczu
+        */
+
+        fetch("https://swapi.dev/api/people/3/")
+        .then(function(response){
+            return response.json();
+        })
+        .then (processData);
+
+        function processData(data){
+            console.log(data);
+            console.log("Nazwa: " + data.name);
+            console.log("Wysokość: " + data.height);
+            console.log("Masa: " + data.mass);
+            console.log("Kolor oczu: " + data.eye_color);
+        }
+
+        // zapis skrócony
+        fetch("https://swapi.dev/api/people/3/")
+        .then(response => response.json()) // funkcja strzałkowa
+        .then(processData);
+    </script>
+</body>
+</html>

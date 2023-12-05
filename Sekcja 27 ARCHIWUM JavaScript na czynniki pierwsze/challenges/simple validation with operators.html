@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        /*
+            Zadanie: sprawdzenie danych artykułu w obiekcie
+            1) Zapisz następujący obiekt
+                let article = { 
+                    date: new Date(2030, 12, 01),
+                    title: "Hello World",
+                    content: "To mój pierwszy artykuł",
+                    tags: ["blog", "lifestyle"],
+                    version: 1
+                };
+            2) Napisz funkcję validateArticle(art)    
+            3) Sprawdź poprawność danych ze względu na typ i wartość:
+               title, content muszą być typu string,
+               muszą też istnieć w obiekcie (użyj operatora in). 
+               Sprawdź czy tags jest tablicą z Array.isArray(arr), 
+               zwraca true jeśli zawartość jest tablicą.
+               version musi być liczbą z wartością większą niż 0
+               Jeżeli cokolwiek się nie zgadza zwróć z funkcji false,
+               w innym wypadku true
+            4) Pokaż wynik w konsoli
+        */
+        
+        let article ={
+            date: new Date(2030,12,01),
+            title: "Hello World",
+            content: "To mój pierwszy artykuł",
+            tags: ["blog", "lifestyle"],
+            version: 1
+        }
+
+        function validateArticle(art){
+            if ("title" in art === false || typeof art.title !== "string"){
+                console.log("Nieprawidłowy title w article");
+                return false;
+            } 
+            if (!"content" in art || typeof art.content !== "string"){
+                console.log("Nieprawidłowy content w article");
+                return false;
+            }
+            if (!"tags" in art || !Array.isArray(art.tags)){
+                console.log("Nieprawidłowa tablica tags");
+                return false;
+            }
+            if (!"version" in art || typeof art.version !== "number"){
+                console.log("Problem z wersja artykułu");
+                return false;
+            }
+            if (art.version <= 0){
+                console.log("Zła wersja artykułu");
+                return false;
+            }
+            return true;
+        }
+
+        console.log(validateArticle(article));
+        
+    </script>
+</body>
+</html>

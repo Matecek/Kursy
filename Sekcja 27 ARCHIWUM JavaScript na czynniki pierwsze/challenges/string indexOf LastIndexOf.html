@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        /*  
+            String indexOf & lastIndexOf
+            1) Napisz funkcję validateEmail sprawdzającą w podstawowy
+               sposób czy email jest prawidłowy.
+            2) Wykorzystaj indexOf i/lub lastIndexOf:
+               - sprawdź czy istnieje w przekazanym do funkcji emailu
+                 znak @, zapisz index w monkeyIndex
+               - posiadając pozycję @ sprawdź czy istnieje znak 
+                 kropki po małpie. 
+                 Wykorzystaj indexOf z dwoma parametrami.
+                 Zapisz pozycję kropki w dotIndex
+               - jeżeli wszystkie powyższe warunki są spełnione
+                 zwróć true, w innym wypadku false 
+            3) Wywołaj funkcję z następującymi emailami, pokaż
+               w konsoli co zwraca funkcja:
+               - asia@example.com 
+               - karol@domena 
+               - user.com
+        */
+
+        function validateEmail(email){
+            let monkeyIndex = email.indexOf("@");
+            if (monkeyIndex < 0) return false;
+
+            let dotIndex = email.indexOf(".", monkeyIndex);
+            if (dotIndex == -1) return false;
+
+            return true;
+        }
+        console.log(validateEmail("asia@example.com"));
+        console.log(validateEmail("karol@domena"));
+        console.log(validateEmail("user.com"));
+    </script>
+</body>
+</html>

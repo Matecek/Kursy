@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        /*
+            Zadanie - operacje na rachunku bankowym, skorzystaj 
+            z skróconych operatorów przypisania z operacją
+            matematyczną np:  +=  -=  *=  /=  itd
+            Uwaga, po każdej operacji wyświetl saldo w konsoli
+            1) Stwórz zmienną balance z wartością początkową 1000
+            2) Dodaj wartość nowej pensji 7000
+            3) Odejmij 2000 kosztów za mieszkanie
+            4) Błąd banku pomnożył Twoje saldo trzykrotnie
+            5) Odejmij 4000 na komputer
+            6) Bank zorientował się że powstał błąd i cofa ostatnie           
+               transakcje. Dodaj do salda 4000, podziel je przez 3
+               i dopiero teraz odejmij 4000
+            7) Pokaż saldo końcowe
+        */
+
+        let balance = 1000;
+        balance += 7000;
+        console.log("Po dodaniu pensji: " + balance);
+        balance -=2000;
+        console.log("Po odjeciu kosztów mieszkania: " + balance);
+        balance *=3;
+        console.log("Po błędzie banku: " + balance);
+        balance -= 4000;
+        console.log("Po kupnie komputera: " + balance);
+        balance = ((balance + 4000)/3) -4000;
+        console.log("Po korekcie: " + balance);
+    </script>
+</body>
+</html>

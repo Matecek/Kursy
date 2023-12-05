@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        /*
+            1. Stwórz funkcję calculateBmi() która przyjmuje dwa parametry weight i height. Wewnątrz fukncji oblicz bmi na podstawie wzoru: waga / wzrost * wzrost
+            2. Wyświetl BMI w konsoli dla wartości wagi: 75 i wzrostu: 1.75
+
+            Norma BMI to :
+            18.5 < prawidłowe BMI < 24.9
+        */
+
+        function calculateBmi(weight, height){
+            let bmi = weight / (height * height);
+            console.log("BMI ma wartość: " + bmi);
+        }
+
+        calculateBmi(80, 1.86);
+    </script>
+</body>
+</html>

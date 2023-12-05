@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div>
+        <ul>
+            <li class="item">Lorem ipsum dolor sit amet.</li>
+            <li class="item">Lorem ipsum dolor sit amet.</li>
+            <li class="item">Lorem ipsum dolor sit amet.</li>
+            <li class="item">Lorem ipsum dolor sit amet.</li>
+        </ul>
+    </div>
+    <script>
+        /*
+            1) Dodaj przed tagiem script w kodzie html element
+               div, w nim utwórz listę ul z czterema elementami li, 
+               każdy z klasą "item" i lorem5
+            2) W kodzie JS pobierz wszystkie elementy li 
+               korzystając z querySelectorAll() i selektora css.
+               W pętli for po pobraniu każdego li skasuj jego
+               klasę css "item" korzystając z li.classList.remove()
+               Dodaj do każdego klasę css "list-item"
+            3) Na koniec pobierz element div z użyciem querySelector()
+               i dodaj na jego początek nowo utworzony element h2.
+               Do utworzenia elementu użyj document.createElement(),
+               jako treść zapisz "List of elements:". Pamiętaj 
+               o użyciu prepend() aby dodać element na początek div.
+        */
+
+        const liItems = document.querySelectorAll("li");
+        for (let i = 0; i < liItems.length; i++){
+            const li = liItems[i];
+
+            li.classList.remove("item");
+            li.classList.add("list-item");
+        };
+
+        const div = document.querySelector("div");
+        let h2 = document.createElement("h2");
+        h2.innerHTML = "List of elements:";
+        div.prepend(h2);
+    </script>
+</body>
+</html>

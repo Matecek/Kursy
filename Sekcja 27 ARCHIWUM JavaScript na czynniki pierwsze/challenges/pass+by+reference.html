@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        /*
+        Przekazywanie danych do funkcji przez referencję, zadanie:
+        1) Utwórz obiekt opisujący pracownika i zapisz go w zmiennej
+           employee. Do właściwości obiektu dodaj:
+           name, email, rank (stopień - wpisz programmer), 
+           salary (8000)
+        1) Napisz funkcje promoteToManager, która przyjmuje parametr
+           o nazwie user, gdzie przekazany będzie obiekt.
+        2) Wewnątrz funkcji zmień wartości właściwości przekazanego
+           obiektu user, podnieś pensje o 50%, zmień rank
+           na manager. Dodatkowo sprawdź czy przypadkiem przekazany
+           pracownik już jest managerem, w takim wypadku podaj w konsoli,
+           że osoba ta już jest managerem i wyjdź z funkcji.  
+        3) Wywołaj funkcję promoteToManager i przekaż utworzony na początku
+           obiekt, sprawdź w konsoli czy został on zaktualizowany. 
+        */
+
+        let employee = {
+            name: "Matt",
+            email: "matt@example.com",
+            rank: "programer",
+            salary: 8000
+        };
+
+        function promoteToManager(user) {
+            if (user.rank == "manager"){
+                console.log("Pratownik jest już managerem.");
+                return;
+            };
+
+            user.rank = "manager";
+            let salary = user.salary;
+            user.salary = salary + (salary * 0.5);
+        };
+
+        promoteToManager(employee);
+        console.log(employee);
+    </script>
+</body>
+</html>

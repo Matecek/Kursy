@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        /*
+            Funkcja zwracająca obiekt samochodu z danymi firmy
+            w oddzielnym obiekcie.
+            1) Stwórz funkcję makeCar przyjmującą parametry:
+               model, color, topSpeed
+            2) Wewnątrz funkcji dodaj właściwość manufacturer,
+               której zawartością będzie obiekt z właściwościami:
+               name jako Dodge, country jako USA
+               W ten sposób powstaną zagnieżdżone obiekty jak 
+               poniższy przykład:
+               let element = {
+                 num: 5,
+                 data: {
+                    name: "another object inside element"
+                 }
+               };
+            3) Funkcja zwraca obiekt samochodu
+            4) Stwórz dwa samochody:
+               - Viper, blue, 290
+               - Ram, red, 240
+               Pokaż je w konsoli
+        */
+
+        function makeCar(model, color, topSpeed) {
+            return {
+                model: model,
+                color: color,
+                topSpeed: topSpeed,
+                manufacturer: {
+                    name: "Dodge",
+                    country: "USA",
+                }
+            }
+        }
+
+        console.log(makeCar("Viper", "Blue", "290"));
+        console.log(makeCar("RAM", "Red", "240"));
+
+    </script>
+</body>
+</html>

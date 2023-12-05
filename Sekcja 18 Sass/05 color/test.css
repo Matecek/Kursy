@@ -1,0 +1,17 @@
+.grayscale {
+  background-color: gray; }
+
+.desaturate {
+  background-color: #cc3333; }
+
+.saturate {
+  background-color: red; }
+
+.lighten {
+  background-color: #ffcccc; }
+
+.darken {
+  background-color: #330000; }
+
+.mix {
+  background-color: #804000; }

@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        /*
+            String: substring, substr, slice, split
+            1) Stwórz funkcję getEmailParts przyjmującą parametr email.
+            2) Funkcja ma zwrócić obiekt z różnymi właściwościami:
+             - parts - wynik podzielenia emaila ze względy na znak @
+             - name - treść przed @, użyj substring
+             - domain - treść po @ i przed . użyj substr
+                    Uwaga, potrzebujesz ilość znaków domeny, oblicz ją
+                    z różnicy znalezionych indeksów
+             - domainExt - treść po ostatniej kropce, użyj slice
+               z ujemną wartością, czyli weź pod uwagę długość
+               łańcucha znaków i położenie ostatniej kropki
+            3) Sprawdź czy @ oraz . wogóle są w mailu, jeśli nie
+               zwróć null. 
+            4) Przetestuj funkcję na następujących emailach:                    
+               kasia@example.com
+               adam.kowalski@domena.pl
+        */
+
+        function getEmailParts(email){
+            const monkeyInd = email.indexOf("@");
+            if (monkeyInd == -1) return null;
+
+            const dotInd = email.lastIndexOf(".");
+            if (dotInd == -1) return null;
+
+            const parts = email.split("@");
+
+            const name = email.substring(0, monkeyInd);
+
+            const domainLen = dotInd - monkeyInd -1;
+            const domain = email.substr(monkeyInd +1, domainLen);
+
+            const extLen = email.length - dotInd -1;
+            const domainExt = email.slice(-extLen);
+
+            return {
+                parts: parts,
+                name: name,
+                domain: domain,
+                domainExt: domainExt
+            }
+        }
+
+        console.log(getEmailParts("kasia@example.com"));
+        console.log(getEmailParts("adam.kowalski@domena.pl"));
+    </script>
+</body>
+</html>

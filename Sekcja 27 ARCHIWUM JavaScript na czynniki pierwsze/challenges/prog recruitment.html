@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        /*
+            Zadanie: rekrutacja pracownika
+            1) Stwórz funkcję recruitProgrammer() z parametrami:
+               email - dane kontaktowe
+               yearsExp - doświadczenie w latach
+               level - poziom kandydata np senior
+               languages - tablica języków które zna kandydat
+            2) W funkcji sprawdź następujące wymagania pracodawcy            
+               za pomocą operatorów porównania:
+               - level: mid
+               - doświadczenie powyżej 1 lat, ale mniejsze niż 6
+               - musi znać język JavaScript lub TypeScript
+                 Uwaga: wykorzystaj funkcję indexOf w tablicy,
+                 zwróci indeks elementu lub -1
+               - jeżeli powyższe warunki są spełnione napisz 
+                 w konsoli że programista z danym email jest przyjęty/a 
+                 i zwróć true. Jeśli nie spełnia warunków również
+                 pokaż odpowiednią informację, zwróc false
+               - przetestuj funkcję dla poniższych przypadków:
+                 ania@test.com, mid, 4, ["JavaScript", "Python"]
+                 adam@example.com, junior, 2, ["Java"]
+                 kasia@domena.com, senior, 7, ["JavaScript", "TypeScript"] 
+        */
+
+        function recruitProgrammer(email, level, yearsExp, languages){
+            if (level != "mid") {
+                console.log(email, " nie jest midem, koniec rekrutacji");
+                return false;
+            }
+
+            let jsExp = false;
+            let tsExp = false;
+            if (languages.indexOf("JavaScript")>= 0) jsExp = true; 
+            if (languages.indexOf("TypeScript")>= 0) tsExp = true; 
+
+            if (jsExp || tsExp){
+                if(yearsExp >= 1 && yearsExp < 6){
+                    console.log(email + " spełnia wszystkie warunki");
+                    return true;
+                }
+            }
+            return false;
+        };
+
+        recruitProgrammer("ania@test.com", "mid", 4,
+                            ["JavaScript", "TypeScript"]);
+        recruitProgrammer("adam@example.com", "junior", 2, ["java"]);
+        recruitProgrammer("kasia@domena.com", "senior", 7,
+                            ["JavaScript", "TypeScript"]);
+    </script>
+</body>
+</html>

@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        /*
+            Operator trójelementowy - ternary
+            1) Stwórz obiekt reprezentujący użytkownika forum
+               w zmiennej user z właściwościami:
+               email: "ania@test.com", membershipCost: 100,
+               numMembershipYears: 3, numberOfPosts: 40
+            2) Napisz funkcję extendMemberShip(user) która
+               przyjmie użytkownika i zdecyduje czy kwalifikuje się
+               na zniżkę rocznej opłaty dostępu do serwisu, musi
+               spełnić ku temu następujące warunki:
+               - użytkownik musi subskrybować serwis minimum 
+                 2 lata. Sprawdź numMembershipYears oznaczający
+                 liczbę lat w serwisie. Użyj operator trójelementowy
+                 i przypisz true lub false do zmiennej membershipDiscountFlag
+               - użytkownik musi mieć minimum 30 postów na forum
+               Gdy oba warunki są spełnione obniż koszt dostępu do forum
+               o 40% i zapisz wartość w membershipCost. Jeśli oba warunki
+               nie są spełnione zapłaci pełną kwotę.
+            3) Pokaż w konsoli czy użytkownik kwalifikuje się na tańszy dostęp
+               do forum i ile będzie wynosiła opłata.
+        */
+
+        let user = {
+            email: "ania@test.com",
+            membershipCost: 100,
+            numMembershipYears: 3,
+            numberOfPosts: 40
+        }
+
+        function extendMemberShip (user){
+            let membershipDiscountFlag = (user.numMembershipYears >= 2) ?true : false;
+
+            let minPostsFlag = user.numberOfPosts >= 30 ?true : false;
+
+            if (membershipDiscountFlag && minPostsFlag){
+                user.membershipCost *= 0.4;
+                console.log(user.email + " Kwalifikuje się do zniżki na forum o wartości: " + user.membershipCost + "zl");
+            }else{
+                console.log(user.email + " ma standardową cenę dostępu do forum czyli: " + user.membershipCost);
+            }
+        }
+
+        extendMemberShip(user);
+    </script>
+</body>
+</html>

@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        /*
+            Napisz dwie funkcje konwertujace temperature:
+            1. Funkcje cToF skonwertuje stopnie Celsjusza na Fahrenheita z wzoru: fahrenheit = celsius * 9 / 5 + 32
+            2. Funkcja fToC konwertuje stopnie Fahrenheita na Celsjusza z wzoru: 
+            celsius = (fahrenheit - 32) * 5 / 9
+            3. Dodatkowo w konsoli pokaz wynik konwersji np:
+            "20 stopni Celsujsza to 68 stopni Fahrenheita" itd.
+            Jesli chcesz uzyj w string specjalnego znaku stopni \xB0
+            4. Skonwertuj 20 C na 68 F
+            Skonwertuj 86 F na 30 C
+        */
+
+        function cToF(celsius){
+            let fahrenheit = celsius * 9 / 5 + 32;
+            console.log(celsius + "\xB0C to: " + fahrenheit + "\xB0F");
+            return fahrenheit;
+        }
+
+        function fToC(fahrenheit) {
+            let celsius = (fahrenheit - 32) * 5 / 9;
+            console.log(fahrenheit + "\xB0F to: " + celsius + "\xB0C");
+            return celsius;
+        }
+
+        let c = cToF(20);
+        let f = fToC(86);
+    </script>
+</body>
+</html>

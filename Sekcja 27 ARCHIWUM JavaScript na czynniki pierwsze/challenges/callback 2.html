@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script> 
+        /*
+            Zadanie z funkcjami anonimowymi i callbackami
+            1. Napisz funkcję filterArr, która przefiltruje tablicę,
+               przyjmuje dwa parametry:
+               - arr - tablica elementów
+               - callback - funkcja, która będzie wywołana w każdej
+                 iteracji pętli, do niej będzie przekazany aktualny
+                 element z tablicy. Wywołany callback zwróci true lub
+                 false, jeśli zwróci true to w konsoli pokaż ten 
+                 element tablicy. Uwaga: implementacja callback nic 
+                 nie pokazuje w konsoli!
+            2) Napisz kolejną funkcję jako wyrażenie funkcyjne 
+               i przypisz je do zmiennej nameCheck z parametrem name.
+               Funkcja zwraca true jeśli przekazany łańcuch znaków
+               ma więcej niż 3 znaki, w innym wypadku zwraca false.
+            3) Wywołaj funkcję filterArr z tablicą imion:
+               "Ania", "Kasia", "Ola", "Daniel". Drugim argumentem
+               funkcji będzie wyrażenie funkcyjne nameCheck. 
+            4) Wywołaj funkcję filterArr z tablicą liczb: 10,20,30,40,50
+               jako callback podaj funkcję anonimową która zwróci true
+               jeśli liczby są mniejsze od 35.
+        */
+
+        function filterArr(arr, callback){
+            for (let i = 0; i < arr.length; i++) {
+                const el = arr[i];
+                const flag = callback(el);
+                if (flag) console.log(el);
+            }
+        }
+
+        const nameCheck = function(name){
+            if (name.length > 3){
+                return true;
+            }else{ 
+                return false;
+            }
+        }
+
+        filterArr(["Ania", "Kasia", "Ola", "Daniel"], nameCheck);
+
+        filterArr([10, 20, 30, 40, 50], function(num){
+            if (num < 35){
+                return true;
+            }else{ return false;
+            }
+        });
+    </script>
+</body>
+</html>

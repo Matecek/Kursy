@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <input type="text">
+
+    <script>
+        /*
+            Zadanie z zdarzeniami w DOM
+            1) Stwórz element input w kodzie html
+            2) Pobierz input w JavaScript i dodaj obsługę zdarzenia
+               click, pokaż w konsoli informację że element
+               został kliknięty
+            3) Do kontrolki dodaj również obsługę zdarzenia "input"
+               i w konsoli pokaż treść w elemencie korzystając
+               z event.target.value, czyli konkretnego przekazanego
+               elementu którego dotyczy zdarzenie w target
+            4) Dodaj obsługę zdarzenia focus wywołanego gdy input
+               otrzymuje focus, w konsoli pokaż zawartość kontrolki
+            5) Na koniec dodaj obsługę zdarzenia blur, pokaż
+               w konsoli informację o utracie focus.
+        */
+
+        let input = document.querySelector("input");
+
+        input.addEventListener("click", function (event) {
+            console.log("input kliknięty");
+        });
+
+        input.addEventListener("input", function (event) {
+            console.log("Treść: " + event.target.value);
+        });
+
+        input.addEventListener("focus", function (eve) {
+            console.log("focus na input, Treść: " + input.value);
+        });
+
+        input.addEventListener("blur", function (event) {
+            console.log("utrata focusu");
+        })
+    </script>
+</body>
+</html>

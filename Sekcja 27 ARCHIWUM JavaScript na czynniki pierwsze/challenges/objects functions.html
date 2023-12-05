@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        /*
+            Zadanie - funkcja zwracajaca obiekt:
+            1. Stworz funkcje generateUser, ktora zwroci obiekt uzytkownika, przymie parametry:
+            - name
+            - email
+            - city
+            - job
+            2. Zapisz wedlug uznania nazwy wlasciwosci obiektu np. username albo tekie same jak parametry
+            3. Przetestuj funkcje z dowolnymi pasujacymi parametrami oraz pokaz wyniki w konsoli. Stworz dwoch uzytkownikow w ten sposob.
+        */
+
+        function generateUser(name, email, city, job) {
+            return {
+                name: name,
+                email: email,
+                city: city,
+                job: job
+            }
+        }
+
+        let user1 = generateUser("Ola", "ola@example.com", "Wawa", "programer")
+        console.log(user1);
+
+        let user2 = generateUser("Mateusz", "mateusz@example.com", "Krakow", "Front-End developer")
+        console.log(user2);
+
+        
+    </script>
+</body>
+</html>

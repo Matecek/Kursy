@@ -1,0 +1,17 @@
+.alert, .alert-success, .alert-danger, .alert-warning {
+  border: 1px solid black;
+  color: black;
+  margin: 0.5rem;
+  padding: 0.5rem; }
+
+.alert-success {
+  color: green;
+  border: 2px dotted green; }
+
+.alert-danger {
+  color: red;
+  border-color: red; }
+
+.alert-warning {
+  color: yellow;
+  border-color: yellow; }

@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+
+        let speaker = function(state){
+            let words = state.words || "Witam";
+            function sing(){
+                console.log(state.name + " śpiewa.");
+            }
+
+            return {
+                sing: sing,
+                speak: function(){
+                    console.log(state.name + " mówi " + words);
+                }
+            }
+        }
+
+        let person = function(name, age, city){
+            let state ={
+                name: name,
+                age: age,
+                city: city,
+                words: "Cześć"
+            };
+
+            return Object.assign(
+                state,
+                speaker(state),
+                eater(state),
+                walker(state)
+                );
+        }
+
+        let walker = function(state){
+            return {
+                walk: function(){
+                    console.log(state.name + " idzie.");
+                },
+                run: function(isFast){
+                    let txt = (isFast ? " szybko": "") + " biegnie."
+                    console.log(state.name + txt);
+                }
+            }
+        }
+
+        let eater = function(state){
+            return {
+                eat: function(){
+                    console.log(state.name + " spożywa jedzenie.");
+                }
+            }
+        }
+
+        let p = person("Ania", 27, "Krk");
+        console.log(p);
+        p.speak();
+        p.walk();
+        p.run(true);
+        p.sing();
+        p.eat();
+
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

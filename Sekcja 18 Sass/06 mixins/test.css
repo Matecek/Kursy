@@ -1,0 +1,19 @@
+div {
+  background-color: silver;
+  -moz-border-radius: 7px;
+  -webkit-border-radius: 7px;
+  border-radius: 7px; }
+
+a {
+  color: blue;
+  font-style: italic; }
+  a:hover {
+    text-decoration: underline;
+    color: red; }
+
+a.nav-item {
+  color: green;
+  font-style: italic; }
+  a.nav-item:hover {
+    text-decoration: underline;
+    color: red; }
