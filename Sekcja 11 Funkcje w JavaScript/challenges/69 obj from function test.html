@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      /*
+            Obiekty zwracane z funkcji - zadanie
+            1. Stwórz funkcję zwracającą obiekt
+               opisujący telewizor o nazwie createTv()
+            2. Funkcja przyjmuje następujące parametry
+               na podstawie których stwórz zwracany obiekt:
+               - brand  
+               - screenSize
+               - color
+            3. Wewnątrz funkcji na początku sprawdź
+               czy color nie jest równy "white" oraz "black"
+               oraz czy nie jest "silver", w takim wypadku
+               zwróć null
+            4. Przetestuj funkcję dla następujących danych
+               - Sony, 42, black
+               - Sharp, 32, white
+               - Lenovo, 50, silver
+               - Lenovo, 42, green
+        */
+
+      function createTv(brand, screenSize, color) {
+        if (color != "white" && color != "black" && color != "silver")
+          return null;
+
+        return {
+          brand: brand,
+          screenSize: screenSize,
+          color: color,
+        };
+      }
+
+      console.log(createTv("Sony", 42, "black"));
+      console.log(createTv("Shrap", 32, "white"));
+      console.log(createTv("Lenovo", 50, "silver"));
+      console.log(createTv("Lenovo", 42, "green"));
+    </script>
+  </body>
+</html>

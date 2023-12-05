@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>   
+        body {
+            background: black;
+            color: white;  
+        }
+
+        * {
+            margin: 20px 2px;
+        }
+        
+    </style>
+</head>
+<body>       
+    
+    <script>
+        
+        // Bez new wywołanie konstruktora sprawi że this będzie
+        // obiektem window, czego należy unikać
+
+        console.log(window);
+
+        //alert("Hello World!");
+        //window.alert("Hello World!"); 
+
+        // var b = 10;
+        // console.log(window.b); // 10
+        // console.log(b); // 10
+
+        function Car(brand, model) {
+            this.brand = brand;
+            this.model = model;
+            this.color = "red";
+
+            this.printInfo = function() {
+                console.log(this.brand, this.model, this.color);
+            }
+        }
+
+        let car1 = Car("Ford", "Mustang");
+        console.log(car1); // undefined
+
+
+        function Vehicle(brand, model) {
+            if (this instanceof Vehicle == false) {
+                // wywołany bez new
+                return new Vehicle(brand, model);
+            }
+
+            this.brand = brand;
+            this.model = model;
+            this.color = "red";
+
+            this.printInfo = function() {
+                console.log(this.brand, this.model, this.color);
+            }
+        }
+
+        let v1 = Vehicle("Dodge", "Ram");
+        console.log(v1);
+
+        let v2 = new Vehicle("Dodge", "Viper");
+        console.log(v2);
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    </script>
+
+
+    
+    
+
+
+
+
+
+
+
+
+
+
+
+
+    
+
+
+    
+</body>
+</html>

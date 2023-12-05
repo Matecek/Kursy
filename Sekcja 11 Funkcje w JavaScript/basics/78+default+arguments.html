@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      body {
+        background: black;
+        color: white;
+      }
+
+      * {
+        margin: 20px 2px;
+      }
+    </style>
+  </head>
+  <body>
+    <script>
+      /*
+            Domyślne argumenty funkcji dostępne 
+            są od EcmaScript2015 - ES6 
+        */
+
+      function createEmployee(
+        name = "unknown",
+        surname = "unknown",
+        email = "unknown@example.com"
+      ) {
+        return {
+          name: name,
+          surname: surname,
+          email: email,
+        };
+      }
+
+      console.log(createEmployee());
+      console.log(createEmployee("Ola"));
+      console.log(createEmployee("Ola", "Kowalska"));
+      console.log(createEmployee("Ola", "Kowalska", "ola@example.com"));
+    </script>
+  </body>
+</html>

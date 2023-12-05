@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>   
+        body {
+            background: black;
+            color: white;  
+        }
+
+        * {
+            margin: 20px 2px;
+        }
+        
+    </style>
+</head>
+<body>       
+    
+    <script>
+        
+        let arr = ["Ola", "Ania", "Kasia", "Ola", "Asia", "Zuza"];
+
+        let newArr = arr.map(function (value, index, arr) {
+            return value + "!";
+        });
+
+        console.log(newArr); // ['Ola!', 'Ania!', 'Kasia!', 'Ola!', 'Asia!', 'Zuza!']
+
+        newArr = arr.map( (value) => value + "!" );
+        console.log(newArr); // ['Ola!', 'Ania!', 'Kasia!', 'Ola!', 'Asia!', 'Zuza!']
+
+        newArr = [1,2,3,4,5,6,7,8].map(Math.sqrt);
+        console.log(newArr); 
+        
+        let filtered = arr.filter(function (v) {
+            return v.length >= 4
+        });
+
+        console.log(filtered); // ['Ania', 'Kasia', 'Asia', 'Zuza']
+
+        let reduced = [1,2,3,4,5,6,7,8,9].reduce(function (acc, currValue, index, arr) {
+            return acc + currValue;
+        });
+
+        console.log(reduced); // 45
+
+        const arr2 = [1,2,3,4,5];
+        console.log( arr2.every( v => v > 0 ) ); // true
+        console.log( arr2.every( v => v > 3 ) ); // false
+        
+        
+        
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    
+    </script>
+
+    
+    
+
+
+
+
+
+
+
+
+
+
+
+
+    
+
+
+    
+</body>
+</html>

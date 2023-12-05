@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let num = Number.MAX_SAFE_INTEGER;
+        console.log(num); // 9007199254740991
+
+        let newNum = 9007199254740995n; // BigInt
+        let newNum2 = 900719925474099n;
+        let num3 = newNum + newNum2;
+        console.log(num3); // 9907919180215094n
+        console.log(num3 / 12345n); // 802585595805n
+
+        if (1 === 1) {
+            import("./modules/test-module.js")
+            .then(obj => console.log(obj)) // moduł: add(), multiply() etc
+            .catch(err => console.log(err));
+        }
+
+        async function loadCode() {
+            let {add, multiply} = await import("./modules/test-module.js");
+
+            let result = add(2,10);
+            console.log(result); // 12
+        }
+
+        loadCode();
+
+
+        // ?? nullish operator - null albo undefined
+        const x = null || 10; // 10 jako domyślna wartość
+        console.log(x); // 10
+        const str = "" || "text"; // pust string to falsy value 
+        console.log(str); // text
+
+        const y = null ?? 22; // jeśli lewa strona nullish (null czy undefined) to 22
+        console.log(y); // 22
+        const txt = "" ?? "text";
+        console.log(txt.length); // pusty łańcuch, length 0
+
+
+        // Optional chaining
+        let o = {
+            a: 10,
+            obj: {
+                b: 23,
+                data : {
+                    str: "text"
+                }
+            }
+        };
+
+        console.log(o?.obj?.data?.str); // text
+        console.log(o?.obj?.data2?.str); // undefined
+
+
+        const promiseArr = [
+            Promise.resolve(20),
+            Promise.reject(null),
+            Promise.resolve({str:"ok"}),
+            Promise.reject(new Error("Error"))
+        ];
+
+        Promise.allSettled(promiseArr)
+            .then( results => {
+                console.log("All promises settled");
+                results.forEach( e => console.log(e.status, e.value));
+            } );
+
+
+        const strData = "Hello Anna, Kasia ,Ania, Antonia, Ola";
+        const regexp = new RegExp("An[a-z]*", "g");
+
+        let match;
+        while ( (match = regexp.exec(strData)) !== null ) {
+            console.log(`${match[0]} at index: ${match.index} `);
+        }
+
+        console.log( globalThis === window ); // true
+
+
+        // module namespace exports
+        /*
+        import * as utils from "./module/test-module.js"
+        export {utils};
+        // a z module namespace exports
+        export * as utils from "./module/test-module.js"
+        */
+
+        // for in order według kolejności zdefiniowania kluczy w obiekcie
+    
+    </script>
+    <script type="module">
+        console.log(import.meta);
+        // {url: 'http://127.0.0.1:5501/ES6+/ES11%20EcmaScript%202020.html'}
+    </script>
+</body>
+</html>

@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>   
+        body {
+            background: black;
+            color: white;  
+        }
+
+        * {
+            margin: 20px 2px;
+        }
+        
+    </style>
+</head>
+<body>       
+    
+    <script>
+        
+        /*
+            Objekt window to ogólnodostępny obiekt
+            w przeglądarce w której działa JavaScript,
+            udostępnia nam wiele przydatnych informacji
+            o aktualnej karcie/oknie przeglądarki.
+        */
+
+        console.log(window.innerWidth);
+        console.log(window.innerHeight);
+
+        console.log(innerWidth);
+        console.log(innerHeight);
+
+
+        setTimeout(function () {
+            console.log("After timeout")
+        }, 800);
+
+
+        let i = 0;
+        let intervalId = setInterval(() => {
+            console.log(i);
+            i++;
+        }, 500);
+
+        //window.alert("Hello World");
+
+        //let userInput = prompt("Podaj swoje imię:");
+        //console.log("Twoje imię to:", userInput);
+
+        let userInput = prompt("Podaj dowolną liczbę:");
+        let floatNum = parseFloat(userInput);
+
+        console.log("Wynik dodawania:", floatNum + 100);
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    
+    </script>
+
+    
+    
+
+
+
+
+
+
+
+
+
+
+
+
+    
+
+
+    
+</body>
+</html>

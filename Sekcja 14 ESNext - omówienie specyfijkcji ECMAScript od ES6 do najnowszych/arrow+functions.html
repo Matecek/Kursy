@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <script>
+        const print = a => console.log(a);
+        print("Hello World!");
+
+        const print2 = (a,b) => {
+            console.log(a, b);
+        }
+        print2("Hello", "World 2");
+
+        const add1 = (a,b) => a + b;
+        console.log( add1(2, 3) );
+
+        const add2 = (a,b) => { 
+            return a + b;
+        }
+
+        const getObj1 = () => ( {test: "text"} );
+        console.log( getObj1() );
+        const getObj2 = (a) => {
+            return {
+                test: a
+            };
+        }
+        console.log( getObj2(10) );
+
+
+        [1,2,3,4].forEach( (el) => console.log(el) );
+
+        const tab1 = [1,2,3,4].map( (el) => el * 2 );
+        console.log(tab1); // [2, 4, 6, 8]
+
+        const tab2 = [1,2,3,4,5,6,7].map( el => el * 3 )
+                        .filter( el => el > 10 );
+        console.log(tab2); // [12, 15, 18, 21]
+
+        /*let Bar = () => {
+
+        }; 
+        //const bar1 = new Bar(); // TypeError: Bar is not a constructor
+        */
+
+        /*const argTest = () => {
+            console.log(arguments);
+            // ReferenceError: arguments is not defined
+        }
+
+        argTest(1,2,3,4,5,6);*/
+
+        const argTest2 = (...params) => {
+            console.log(params);
+        }
+        argTest2(1,2,3,4,5,6); // [1, 2,3, 4, 5, 6]
+
+        let objTest = {
+            data: "Hello",
+            foo: function () {
+                setTimeout( () => {
+                    console.log(this.data);
+                } ,100);
+            }
+        };
+
+        objTest.foo();
+
+    </script>
+</body>
+</html>

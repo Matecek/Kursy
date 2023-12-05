@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      /*
+            Wyrażenie funkcyjne zadanie
+            1. Napisz funkcję anonimową obliczającą  
+               i zwracającą wynik mnożenia dwóch liczb
+            2. Przypisz funkcje do zmiennej "multiply"
+               dzięki czemu powstanie wyrażenie 
+               funkcyjne
+            3. Wywołaj funkcję z argumentami 3 i 6,
+               pokaż wynik w konsoli
+            4. Przypisz funkcję do zmiennej test
+               i wywołaj ją z argumentami 10 i 25,
+               zaprezentuj wynik w konsoli
+        */
+
+      const multiply = function (a, b) {
+        return a * b;
+      };
+
+      console.log(multiply(3, 6));
+
+      let test = multiply;
+      console.log(test(10, 25));
+    </script>
+  </body>
+</html>

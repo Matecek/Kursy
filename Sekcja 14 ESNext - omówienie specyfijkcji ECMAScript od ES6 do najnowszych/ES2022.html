@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        class Car {
+            constructor() {
+                this.name = "Mustang";
+                this._brand = "Ford";
+                this.onClick = this.#clicked;
+            }
+
+            static PI = 3.14
+            static #TEST = "txt"
+
+            // public instance field
+            color = "red"
+            topSpeed = 250
+            currentOfficialPrice = 200000
+            // private instance field
+            #currentPrice = 123000 
+
+            printInfo = () => {
+                console.log("currentOfficialPrice:", this.currentOfficialPrice);
+                console.log("#currentPrice:", this.#currentPrice);
+                console.log("#TEST:", Car.#TEST); // txt
+            }
+
+            #clicked = () => {
+                console.log("car clicked:", this.name);
+            }
+
+            static getNewCar() {
+                return new Car();
+            }
+        }
+
+        let car = new Car();
+        console.log(car._brand); // Ford
+        console.log(car.color); // red
+        console.log(car.year); // undefined 
+        console.log(car.currentPrice); // 200000  
+        //console.log(car.#currentPrice); // Private field '#currentPrice' must be declared in an enclosing class  
+        car.printInfo();
+        setTimeout( car.onClick, 10 ); // car clicked: Mustang
+        console.log( Car.PI ); // 3.14
+        console.log( Car.getNewCar() ); 
+    </script>
+    <script type="module">
+        // top level await
+        const resposne = await fetch("https://api.chucknorris.io/jokes/random");
+        const data = await resposne.json();
+        console.log(data);
+    </script>
+</body>
+</html>

@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>   
+        body {
+            background: black;
+            color: white;  
+        }
+
+        * {
+            margin: 20px 2px;
+        }
+        
+    </style>
+</head>
+<body> 
+
+    <script> 
+        
+        /*
+            Domknięcia pozwalają na tzw. currying czyli rozkładanie
+            funkcji z wieloma argumentami na funkcje z pojedynczymi
+            argumentami. Każda funkcja zwraca nową funkcję 
+            przyjmującą jeden parametr. 
+        */ 
+
+        function test(x) {
+            return function(y) {
+                console.log(x, y);
+            }
+        }
+
+        let show = test(12);
+
+        show(5); // 12 5
+        show(6); // 12 6
+        show(7); // 12 7
+        show(8); // 12 8
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    </script>
+
+
+    
+    
+
+
+
+
+
+
+
+
+
+
+
+
+    
+
+
+    
+</body>
+</html>

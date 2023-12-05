@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>   
+        body {
+            background: black;
+            color: white;  
+        }
+
+        * {
+            margin: 20px 2px;
+        }
+        
+    </style>
+</head>
+<body>       
+    
+    <script> 
+        
+        let obj = { a: 1, b: 2, str: "text", arr: [1, 2, 3], info: {o: 1} };
+
+        let data = { test: 333 };
+
+        let result = Object.assign(data, obj);
+
+        // { test: 333, a: 1, b: 2, str: "text", arr: [1, 2, 3], info: {o: 1} };
+        console.log(result);
+        console.log(result === data); // true
+
+        console.log(obj === data); // false
+        console.log(obj.arr === data.arr); // true
+        console.log(obj.info === data.info); // true
+
+
+        let o1 = { a: 1, b: 2 };
+        let o2 = { c: 10 };
+        let o3 = { txt: "test" };
+
+        let obj2 = Object.assign({}, o1, o2, o3);
+        console.log(obj2); // {a: 1, b: 2, c: 10, txt: 'test'}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    </script>
+
+
+    
+    
+
+
+
+
+
+
+
+
+
+
+
+
+    
+
+
+    
+</body>
+</html>

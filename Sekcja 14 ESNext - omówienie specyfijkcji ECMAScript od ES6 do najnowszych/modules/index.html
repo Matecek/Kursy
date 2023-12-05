@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script type="module" src="test-module.js"></script>
+    <script type="module">
+        import * as myModule from "./test-module.js";
+        console.log(myModule); // myModule przestrzeń nazw z nazwanymi 
+                               // eksportami z test-module.js
+        console.log(myModule.testValue); // "test"
+        console.log(myModule.getData()); // 123 
+        console.log(myModule.value); // undefined - nie ma dostępu bo z domyślnego eksportu
+
+        import {getData, testValue, add as addition} from "./test-module.js";
+        console.log( getData() ); // 123
+        console.log( testValue ); // "test"
+        console.log( addition(10,2) ); // 12 addition to alias add()
+
+        import myDefault from "./test-module.js";
+        console.log(myDefault); // obiekt z default export
+                                // {value: 'Hello World', getData: ƒ}
+
+
+        import defaultExport, {multiply, testValue as testData} from "./test-module.js";
+        console.log(multiply(10,3)); // 30
+        console.log(testData); // "test"
+    
+        //testValue = "test changed"; // Uncaught TypeError: Assignment to constant variable.
+        myModule.setTestValue("test changed");
+        console.log(testData); // "test changed"
+        console.log(testValue); // "test changed"
+    
+    
+    
+    </script>
+</body>
+</html>

@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>   
+        body {
+            background: black;
+            color: white;  
+        }
+
+        * {
+            margin: 20px 2px;
+        }
+        
+    </style>
+</head> 
+<body>       
+    
+    <script> 
+        
+        /*
+            Jeżeli dodamy setter do obiektu dla danej zmiennej
+            to zostanie wywołany automatycznie przy zapisie wartości
+            do tej zmiennej. Podobnie będzie z getterem przy
+            pobraniu wartości.
+        */
+
+        const user = {
+            _name: null,
+
+            set name(newValue) {
+                // setter
+                if (newValue.length > 2) {
+                    this._name = newValue;
+                } else {
+                    console.log("Name too short");
+                }
+            },
+            get name() {
+                // getter
+                return this._name;
+            }
+        };
+
+        user.name = "Asia";
+        console.log(user.name);
+        user.name = "A";
+        console.log(user.name);
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    </script>
+
+
+    
+    
+
+
+
+
+
+
+
+
+
+
+
+
+    
+
+
+    
+</body>
+</html>

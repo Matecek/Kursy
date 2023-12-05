@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let obj = {
+            a: 10,
+            b: 99,
+            str: "test"
+        };
+
+        const handler = {
+            get(target, prop, receiver) {
+                if (prop === "a") return "A!!!";
+                return target[prop] + "!";
+            }, 
+
+            set(target, prop, value) {
+                if (prop === "a" || prop === "b") { 
+                    if (Number.isInteger(value)) {
+                        target[prop] = value;
+                    }
+                } else if (prop === "str" && typeof value === "string") {
+                    target[prop] = value;
+                } else {
+                    console.log("wrong data");
+                }
+            }
+        };
+
+        const proxy1 = new Proxy(obj, handler);
+        console.log(proxy1.a); // A!!!
+        console.log(proxy1.b); // 99!
+        console.log(obj.a); // 10
+        console.log(Reflect.get(proxy1, "str")); // test!
+
+        proxy1.b = 112;
+        console.log(proxy1.b); // 112!
+        proxy1.b = "test";
+        console.log(proxy1.b); // 112!
+
+        proxy1.str = 23;
+        console.log(proxy1.str); // wrong data
+        proxy1.str = "OSA";
+        console.log(proxy1.str); // OSA!
+    </script>
+</body>
+</html>

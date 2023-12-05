@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        const arr = [12,20,110,3];
+        delete arr[1];
+        for (const v of arr) console.log(v); // 12, undefined, 110, 3
+
+        for (const k in arr) console.log(k); // indeksy 0,2,3
+
+
+        const str = "text";
+        for (const s of str) console.log(s); // t,e,x,t
+
+        for (const i in str) console.log(i); // 0, 1, 2, 3
+        // console.log( str[0] ); // t
+
+        const obj = {
+            a: 10,
+            txt: "text",
+            print: function() {}
+        }; 
+
+        Object.defineProperty(obj, "test", {
+            value: 45,
+            configurable: true, // czy można skasować property
+            writable: false, // czy można nadpisać wartość
+            enumerable: true
+        });
+        obj.test = 12; // nie da się nadpisać
+        console.log(obj.test); // 45
+
+        console.log(obj); // {a: 10, txt: 'text', test: 45, print: ƒ}
+        //delete obj.test;
+        //console.log(obj); // {a: 10, txt: 'text', print: ƒ}
+
+        //for (const v of obj) console.log(v); // Uncaught TypeError: obj is not iterable
+        for (const v of Object.values(obj)) console.log(v); // 10, text, f () {}
+
+        for (const key in obj) console.log(key); // a, txt, print, test
+        console.log( obj.propertyIsEnumerable("test") ); // true
+        
+    </script>
+</body>
+</html>

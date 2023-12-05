@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        function foo(a, b, c) {
+            console.log(a,b,c);
+        }
+
+        const tab = [3,2,1];
+
+        foo(...tab);
+
+
+        const tab2 = [1,2, ...tab, 4,5,6];
+        console.log(tab2); // [1, 2, 3, 2, 1, 4, 5, 6]
+
+        const name = "Ania";
+        const chars = [...name];
+        console.log(chars); ['A', 'n', 'i', 'a']
+
+        const basicObj = { a: "Ola", b: 23 };
+
+        let secondObj = {
+            c: 77,
+            d: "test",
+            ...basicObj,
+            e: 1
+        };
+        console.log(secondObj);
+        // {c: 77, d: 'test', a: 'Ola', b: 23, e: 1}
+
+
+        const tasksList = [
+            {name: "Task 1", completed: false},
+            {name: "Task 2", completed: false},
+            {name: "Task 3", completed: true},
+            {name: "Task 4", completed: false},
+        ];
+
+        //tasksList.push({name: "Task 5", completed: false});
+
+        const newTasksList = [ ...tasksList , {name: "Task 5", completed: false}];
+
+        console.log(newTasksList);
+
+
+    </script>
+</body>
+</html>

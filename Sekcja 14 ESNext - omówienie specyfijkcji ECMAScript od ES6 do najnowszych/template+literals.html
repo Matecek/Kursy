@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        const user = { name: "Ania", city: "Wawa" };
+
+        const txt = `
+            Hello ${user.name} from ${user.city}.
+            ${2+2}
+        `;
+
+        console.log(txt);
+
+        function uppercase(strings, ...values) {
+            console.log(strings);
+            console.log(values);
+
+            let result = "";
+            for (let i = 0; i < strings.length; i++) {
+                result += strings[i];
+                if (i < values.length) { 
+                    let v = values[i];
+                    if (typeof v === "string") v = v.toUpperCase();
+                    result += v;
+                }
+            }
+
+            return result;
+        }
+
+        const txt2 = uppercase`
+            Hello ${user.name} from ${user.city}.
+            ${2+2}
+        `;
+
+        console.log(txt2);
+
+        const text = "Hello world!";
+        console.log( text.includes("world") ); // true
+        console.log( text.startsWith("Hello") ); // true
+        console.log( text.startsWith("ello") ); // false
+        console.log( text.startsWith("ello", 1) ); // true
+        console.log( text.endsWith("world!") ); // true
+        console.log( text.endsWith("Hello", 5) ); // true, drugi param
+                                                  // ile znaków sprawdzić
+                                                  // od początku
+
+    </script>
+</body>
+</html>

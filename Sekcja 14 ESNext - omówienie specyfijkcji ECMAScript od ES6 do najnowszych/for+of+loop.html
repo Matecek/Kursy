@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <div></div>
+    <div></div>
+    <div></div>
+
+    <script>
+        const tab1 = [1,2,3,4,5,99];
+        for ( let v of tab1) {
+            console.log(v);
+        }
+
+        const str = "text";
+        for (let s of str) console.log(s);
+
+        const map1 = new Map();
+        map1.set("test", {id: 1, content: "text"});
+        const car = {car: "GMC"};
+        map1.set(car, {topSpeed: 200});
+
+        console.log(map1.get("test")); // {id: 1, content: 'text'}
+        console.log(map1.get(car)); // {topSpeed: 200}
+
+        for ( const entry of map1 ) {
+            console.log(entry); // ['test', {…}]  ,  [{…}, {…}]
+        }
+
+        for ( const [key, value] of map1) {
+            console.log(key, value);
+        }
+
+
+        const set = new Set([1,1,1,2,3,3,4,5,6,6,7]);
+        for (const v of set) console.log(v);
+
+        const elements = document.querySelectorAll("div");
+        for (const d of elements) {
+            d.innerHTML = "test";
+        }
+
+    </script>
+</body>
+</html>

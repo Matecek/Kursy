@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      /*
+        Generatory to specjalne funkcje  z gwiazdką, które mogą być 
+        wstrzymywane i ponownie wznawiane w dowolnym momencie. 
+        Zwykłe funkcje wykonują całą 
+        logikę wewnątrz po wywołaniu i kończą swoje działanie, 
+        dodatkowko mogą zwrócić tylko jedną wartość po wykonaniu, 
+        ale generatory mogą zwrócić kilka wartości niezależnie.
+    */
+      function* foo() {
+        yield "test 1";
+        yield "test 2";
+        yield "test 3";
+      }
+
+      const testIter = foo();
+      console.log(testIter.next()); // {value: 'test 1', done: false}
+      console.log("test");
+      console.log(testIter.next()); // {value: 'test 2', done: false}
+      console.log(testIter.next()); // {value: 'test 3', done: false}
+      console.log(testIter.next()); // {value: undefined, done: true}
+
+      /* wywołanie funkcji generatora NIE URUCHOMI kodu funkcji!
+           otrzymamy iterator w którym iterujemy dzięki next(), który 
+           wykona pierwszy kawałek kodu aż napotka słowo kluczowe yield.
+           yield powinno nam coś zwrócić z funkcji, w praktyce będzie 
+           to obiekt
+           { value: "", done: false }
+
+           next() - zwraca wynik wyrażenia następującego po słowie yield
+           return() - zakończenie działania iteratora z {value: undefined, done: true]}
+           throw("opis błędu") - zwraca błąd na iteratorze, można podać opis błędu
+
+           yield może zwrócić cokolwiek prymityw, obiekt, Promise, efekt wywołanie funkcji itd
+        */
+
+      function* genRandomId() {
+        while (true) {
+          let v = Math.trunc(Math.random() * 1000);
+          yield v;
+        }
+      }
+
+      const randomId = genRandomId();
+      console.log(randomId.next());
+
+      function* genRandomMaxId() {
+        while (true) {
+          const maxValue = yield;
+          let v = Math.trunc(Math.random() * maxValue);
+          yield v;
+        }
+      }
+
+      const arr = Array.from(Array(10).keys());
+      const randomNumMaxIter = genRandomMaxId();
+
+      arr.forEach((el) => {
+        randomNumMaxIter.next(); // zatrzymujemy się przed przypisaniem
+                                 // wartości do maxValue
+        const random = randomNumMaxIter.next(150);
+        console.log("random:", random.value);
+      });
+    </script>
+  </body>
+</html>
