@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        /*
+            Zadanie z zmiennymi lokalnymi i globalnymi
+            1. Stwórz globalną zmienną name, przypisz
+               do niej wartość "Asia"
+            2. Sprawdź w instrukcji if czy name równe
+               jest "Asia". W bloku kodu powołaj
+               kolejną zmienną o nazwie name, ale 
+               z inną wartością niż "Asia"
+            3. Pokaż wartość name w bloku kodu instrukcji if oraz 
+               za tym blokiem
+        */
+
+        let name = "Asia";
+
+        if (name == "Asia"){
+            let name = "Ola";
+            console.log(name); // Ola
+        }
+
+        console.log(name); // Asia
+    </script>
+</body>
+</html>

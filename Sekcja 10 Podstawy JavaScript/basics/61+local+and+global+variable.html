@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>   
+        body {
+            background: black;
+            color: white;  
+        }
+
+        * {
+            margin: 20px 2px;
+        }
+        
+    </style>
+</head>
+<body>       
+    
+    <script>
+        
+        /*
+            W JavaScript możemy utworzyć globalne zmienne / stałe czyli będą 
+            dostępne w całym programie.
+            Natomiast zmienne / stałe lokalne o zasięgu bloku kodu 
+            utworzymy z let i const. W bloku kodu można również powołać
+            nową zmienną / stałą o tej samej nazwie co globalna 
+            i przesłoni ją w tym bloku, będzie inną wartością.
+        */
+
+        let a = 12;
+        const txt = "Kasia";
+
+        if (true) {
+            let a = 100; // zmienne lokalne 
+            let txt = "Zosia"; // które przesłaniają globalne o tej samej nazwie
+
+            console.log(a); // 100
+            console.log(txt); // Zosia
+        }
+
+        console.log(a); // 12
+        console.log(txt); // Kasia
+        
+        
+        for (let i = 0; i < 3; i++) {
+            let a = 56;
+            console.log("for", i, a);
+        }
+
+
+
+
+        
+        
+
+
+
+
+
+
+
+
+    
+    </script>
+
+    
+    
+
+
+
+
+
+
+
+
+
+
+
+
+    
+
+
+    
+</body>
+</html>

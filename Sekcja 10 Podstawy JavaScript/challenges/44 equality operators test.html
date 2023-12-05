@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+         /*
+            Operatory porównania - zadanie
+            1. Stwórz zmienną temp z wartością 
+               początkową 5, opisującą temperaturę 
+               powietrza 
+            2. Dodaj kombinacje if else if oraz sprawdź
+               poniższe warunki używając operatorów
+               porównania:
+               - wartość mniejsza równa zero to info
+                 w konsoli "Zimno i ślisko"
+               - wartość mniejsza równa 8 
+                 to "wczesna wiosna"
+               - wartość mniejsza równa 15 to "wiosna"
+               - wartość mniejsza od 25 to "lato"
+               - wartość większa równa od 25 to "upał"
+        */
+
+        let temp = 5;
+
+        if(temp < 0){
+            console.log("Zimno i ślisko");
+        }else if(temp <= 8){
+            console.log("wczesna wiosna");
+        }else if(temp <= 15){
+            console.log("wiosna");
+        }else if (temp < 25) {
+            console.log("lato");
+        }else if (temp >= 25){
+            console.log("upał");
+        }
+    </script>
+</body>
+</html>

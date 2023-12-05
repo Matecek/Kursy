@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>   
+        body {
+            background: black;
+            color: white;  
+        }
+
+        * {
+            margin: 20px 2px;
+        }
+        
+    </style>
+</head>
+<body>       
+    
+    <script>
+
+        /*
+            Identyfikator to nazwa zmiennej nadawana przez programistę dzięki
+            której może odwołać się w programie do danego miesjca w pamięci, 
+            gdzie przechowana jest wartość.
+            Identyfikatory muszą zaczynać się literą lub znakiem $ lub _ ,
+            nie mogą mieć w nazwie spacji, przecinka, kropki itd.
+            Słowa kluczowe nie mogą być identyfikatorami.
+        */ 
+
+        //const const = 12; // SyntaxError: Unexpected token 'const' (
+        const const1 = 12; 
+
+        let numStudents = 300; // camelCase
+
+        //let car color = "red"; // SyntaxError: Unexpected identifier 'color' (
+        let carColor = "red"; // SyntaxError: Unexpected identifier 'color' (
+        //let top%Speed = 230; // Unexpected token '%' (
+        //let car.Acceleration = 5; // Unexpected token '.' (
+        //let 2carNumDoors = 2; // SyntaxError: Invalid or unexpected token (
+
+        const _data = "test";
+        let $str = "Ola";
+
+        //const _data = 123; // SyntaxError: Identifier '_data' has already been declared (
+        const _DATA = 123; // JS jest case sensitive
+
+
+
+
+
+        
+
+
+    </script> 
+    
+</body>
+</html>

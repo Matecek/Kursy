@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>   
+        body {
+            background: black;
+            color: white;  
+        }
+
+        * {
+            margin: 20px 2px;
+        }
+        
+    </style>
+</head>
+<body>       
+    
+    <script>
+        
+        /*
+            not operator - czyli operator logiczny negacji, który 
+            odwraca wartość logiczną np.: !true zamieni się na false
+        */
+
+        console.log( !true ); // false
+        console.log( !false ); // true
+        
+
+        if ( !(6 >= 2) ) console.log("test");
+
+        let emailSent = false;
+
+        if (emailSent === false) {
+            console.log("Trzeba wysłać email");
+        }
+
+        // czy email nie został wysłany
+        if (!emailSent) { // czy w emailSent nie ma wartości true
+            console.log("Trzeba wysłać email");
+        }
+
+        if (emailSent) { // czy email został wysłany
+            console.log("email został wysłany");
+        }
+        
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    
+    </script>
+
+    
+    
+
+
+
+
+
+
+
+
+
+
+
+
+    
+
+
+    
+</body>
+</html>

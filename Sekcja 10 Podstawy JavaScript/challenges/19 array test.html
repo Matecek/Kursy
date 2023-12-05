@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        /* 
+           Array - tablice - zadanie
+           1. Stwórz tablicę  z nazwami prymitywów,
+              które znasz z kursu np.: string, number itd
+           2. Wyświetl tablicę w konsoli
+           3. Pokaż pierwszy i ostatni element
+           4. Zmień wartość drugiego elementu na tą 
+              samą wartość ale z wykrzyknikiem na końcu
+              łańcucha znaków np "number!". Pokaż ponownie
+              tablicę w konsoli.
+        */ 
+
+        let arr = ["string", "number", "bigint", "boolean", "null", "undefined", "symbol"]
+
+        console.log(arr);
+        console.log(arr[0]);
+        console.log(arr[arr.length -1]);
+
+        arr[1] = "number!";
+        console.log(arr);
+    </script>
+</body>
+</html>

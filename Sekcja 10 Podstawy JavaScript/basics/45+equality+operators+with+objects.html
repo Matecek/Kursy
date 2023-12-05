@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>   
+        body {
+            background: black;
+            color: white;  
+        }
+
+        * {
+            margin: 20px 2px;
+        }
+        
+    </style>
+</head>
+<body>       
+    
+    <script>
+        
+        /*
+            Operatory równości w przypadku sprawdzania obiektów tylko 
+            stwierdzają czy dwa obiekty mają ten sam adres w pamięci! 
+            Wynika to z tego że dany obiekt, a raczej uchwyt do
+            niego może być przechowywany w wielu zmiennych czy stałych, 
+            bo to typ złożony
+        */
+
+        let a = 10;
+        let b = a; // 10 jest skopiowane do zmiennej b
+        b++;
+
+        console.log("a:", a); // 10
+        console.log("b:", b); // 11
+
+
+        let obj = { a: 10 };
+        let data = obj; // data i obj wskazują na to samo miejsce w pamięci
+                        // do data została przekazana referencja do obiektu w obj
+        
+        obj.a++;
+        console.log("obj.a:", obj.a); // 11
+        console.log("data.a:", data.a); // 11
+
+        if (obj == data) {
+            // czy obj wskazuje na to samo miejsce w pamięci co data
+            console.log("Wskazują na to smao miejsce w pamięci")
+        } else {
+            console.log("Nie wskazują na to samo miejsce w pamięci");
+        }
+
+        let info = { a: 12, b: 15 };
+        if (obj == info) {
+            // czy obj wskazuje na to samo miejsce w pamięci co info
+            console.log("Wskazują na to samo miejsce w pamięci")
+        } else {
+            console.log("Nie wskazują na to samo miejsce w pamięci");
+        }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    
+    </script>
+
+    
+    
+
+
+
+
+
+
+
+
+
+
+
+
+    
+
+
+    
+</body>
+</html>

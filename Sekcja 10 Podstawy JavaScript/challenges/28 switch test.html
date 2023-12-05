@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        /*
+            Zadanie z switch
+            1. Napisz zmienną temp w której będzie 
+               temperatura powietrza
+            2. W instrukcji switch sprawdź następujące
+               przypadki:
+               - wartość -10 i -5 to informacja 
+                 w konsoli "zimno"
+               - 0 - "zamarzanie wody"
+               - 5 - "przedwiośnie"
+               - 10 - "wiosna"
+               - 20 - "lato"
+               - default - "nieznana temperatura"
+                 
+        */
+
+        let temp = 12;
+
+        switch (temp){
+            case -10:
+            case -5:
+                console.log("zimno");
+                break;
+            case 0:
+                console.log("zamarzanie wody");
+                break;
+            case 5:
+                console.log("przedwiośnie");
+                break;
+            case 10:
+                console.log("wiosna");
+                break;
+            case 20:
+                console.log("lato");
+                break;
+            default: 
+                console.log("nieznana temperatura");
+        }
+
+    </script>
+</body>
+</html>

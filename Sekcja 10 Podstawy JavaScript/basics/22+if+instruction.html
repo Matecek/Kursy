@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>   
+        body {
+            background: black;
+            color: white;  
+        }
+
+        * {
+            margin: 20px 2px;
+        }
+        
+    </style>
+</head>
+<body>       
+    
+    <script>
+        
+        /* 
+           Instrukcja warunkowa if pozwala na dodanie  
+           logiki w naszych programach. Sprawdza czy dany 
+           warunek jest spełniony, czy daje wartość true
+           i następnie wykonywany jest blok kodu znajdujący się
+           w nawiasach klamrowych po instrukcji if.
+        */ 
+        
+        if (true) {
+            console.log("wykona się 1!");
+            console.log("wykona się 2!");
+        }
+
+        if (false) {
+            console.log("nie wykona się 1!");
+            console.log("nie wykona się 2!");
+        }
+
+        if (10 > 2) {
+            console.log("10 większe od 2"); 
+        }
+
+
+        let result = ((12 + 8) * 2) < 100; // true
+        if (result) {
+            console.log("result mniejsze od 100");
+        }
+
+        let a = 14;
+        let b = 7;
+
+        if (a > b) {
+            console.log("a większe od b");
+        }
+
+        if (a == 14) {
+            console.log("a równe jest dokładnie 14");
+        }
+
+        if (a != 15) { // true
+            console.log("a nie jest równe wartości 15");
+        }
+</script>  
+</body>
+</html>

@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>   
+        body {
+            background: black;
+            color: white;  
+        }
+
+        * {
+            margin: 20px 2px;
+        }
+        
+    </style>
+</head>
+<body>       
+    
+    <script>
+        /* 
+           Object - typ złożony, który posiada różne
+                   dane jako pary właściwości i wartości.  
+                   Obiekty można utworzyć na wiele sposobów,
+                   jednym z najbardziej popularnych to 
+                   tzw. "literał obiektu" zwany również 
+                   "notacją literałową"
+        */ 
+
+        let countryName = "Poland";
+        let countryPopulation = 38000000;
+
+        let country = {
+            name: "Poland",
+            population: 38_000_000, // 38000000
+            continent: "Europe",
+            cities: ["Warszawa", "Kraków", "Poznań"],
+            capital: {
+                name: "Warszawa",
+                population: 2000000
+            }
+        };
+
+        console.log(country);
+        console.log(country.name); // Poland
+        console.log(country.population); // 38000000
+        console.log(country.capital.name); // Warszawa
+        console.log(country.capital.population); // 2000000
+
+        let obj = {};
+        obj.arr = [1,2,3];
+        obj.data = {
+            a: 12,
+            b: 20
+        };
+
+        console.log(obj);
+
+
+    </script>    
+</body>
+</html>

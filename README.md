@@ -1,2 +1,3 @@
-# Kursy
-Są tutaj moje wszystkie kursy podzielone w branch.
+# Kurs
+Witam! Nazywam się Mateusz.
+W tym folderze znajdują sie moje zadania związane z kursem na Udemy

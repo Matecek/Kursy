@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        /*
+            Zadanie z pętlą for
+            1. Napisz tablicę elementów od -6 do 6
+            2. Dodaj wszystkie elementy w tablicy do 
+               siebie, pokaż sumę w konsoli
+            3. Podczas iteracji tablicy pokaż tylko 
+               w konsoli liczby większe od zera
+        */
+
+        const arr = [-6,-5,-4,-3,-2,-1,0,1,2,3,4,5,6];
+
+        let sum = 0;
+
+        for (let i = 0; i < arr.length; i++) {
+            let el = arr[i];
+            
+            sum = sum + el;
+
+            if(el > 0){
+                console.log(el);
+            }
+        }
+
+        console.log("sum: ", sum);
+    </script>
+</body>
+</html>
