@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <script>
+        let xhrObject = new XMLHttpRequest();
+        xhrObject.onreadystatechange = function(){
+            if(xhrObject.readyState === 4){
+                if(xhrObject.status === 200
+                    || xhrObject.status === 304){
+                        console.log(xhrObject.responseText);
+                        parseXml(xhrObject.responseText);
+                }
+            }
+        }
+
+        xhrObject.open("GET", "test.xml", true);
+        //xhrObject.setRequestHeader("Content-type", "application/x-www-from-urlecoded")
+        xhrObject.send("name=Ola&city=Krk");
+
+        function parseXml(xmlStr){
+            let domParser = new DOMParser();
+            let xmlObj = domParser.parseFromString(xmlStr, "application/xml");
+            if(xmlObj.documentElement.nodeName === "parsererror"){
+                console.log("Błąd pliku XML");
+            }else{
+                showData(xmlObj);
+            }
+        }
+
+        function showData(xmlObj){
+            let booksColletion = xmlObj.getElementsByTagName("book");
+            console.log((booksColletion));
+            let book1 = booksColletion[0];
+            console.log(book1.getElementsByTagName("title")[0].childNodes[0].nodeValue); //Książka #1
+            console.log(book1.getAttribute("lang")); //pl
+            console.log(book1.attributes["lang"].nodeValue); //pl
+            book1.setAttribute("id", "book1");
+            console.log(book1.getAttribute("id")); //book1
+
+            let serializer = new XMLSerializer();
+            let xmlStr = serializer.serializeToString(xmlObj);
+            console.log(xmlStr);
+        }
+
+        function getJSONFile(path, callback){
+            let xhrObject = new XMLHttpRequest();
+            xhrObject.onreadystatechange = function(){
+                if(xhrObject.readyState === 4){
+                    if(xhrObject.status === 200 || xhrObject.status === 304){
+                        if(callback) callback(xhrObject.responseText);
+                    }
+                }
+            }
+            xhrObject.open("GET", path);
+            xhrObject.send();
+        }
+
+        getJSONFile("books.json", function(data){
+            console.log(data);
+            let json = JSON.parse(data);
+            console.log(json);
+            console.log(json.books[0].title);
+        })
+
+    </script>
+</body>
+</html>

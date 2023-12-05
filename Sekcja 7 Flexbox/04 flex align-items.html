@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>   
+        body {
+            background: black;
+            color: white;  
+        }
+
+        * {
+            margin: 20px 2px;
+        }
+
+        /*
+            Flexbox - pozwala na ustawienie elementów w wierszu
+                      lub w kolumnie z stylem  
+            flex-direction - wartości: row, column, row-reverse, column-reverse 
+                      
+            flex-wrap - jak elementy mają być zawijane:
+             - nowrap - brak zawijania, skurczą się lub wyjdą poza kontener
+             - wrap - zawijanie do następnej linii
+             - wrap-reverse - zawijanie z dołu do góry
+
+            justify-content - wyrównanie elementów na osi głównej w wierszu:
+             - center - wycentrowane
+             - flex-start - na początku kontenera
+             - flex-end - na końcu kontenera
+             - space-between - elementy rozsuwają się od siebie na końce osi
+             - space-around - równomierne rozłożenie elementów
+                              z przestrzenią przed, między i za elementami
+             - space-evenly - równe rozłożenie elementów między sobą
+
+
+            align-items - wyrównanie elementów w pionie: flex-start
+                          flex-end, center, stretch (cała wysokość),
+                          baseline (na linii bazowej)
+
+        */
+
+        .container {
+            display: flex;
+            flex-direction: row; 
+            flex-wrap: wrap;
+            justify-content: space-evenly;
+            align-items: flex-end;
+            height: 160px;
+            border: 2px solid red;
+        }
+
+        .container div {
+            margin: 5px;
+            width: 50px; 
+            height: 50px;
+            background: green;
+            text-align: center;
+            line-height: 50px;
+        }
+
+        div.h100 {
+            height: 100px;
+            background: orange;
+        }
+
+        div.h120 {
+            height: 120px;
+            background: red;
+        }
+        
+        
+    </style>
+</head>
+<body>       
+    
+    <div class="container">
+        <div>1</div>
+        <div>2</div>
+        <div>3</div>
+        <div>4</div>
+        <div>5</div>
+        <div class="h100">6</div>
+        <div class="h120">7</div>
+    </div>
+    
+
+    
+    
+
+
+
+
+
+
+
+
+
+
+
+
+    
+
+
+    
+</body>
+</html>

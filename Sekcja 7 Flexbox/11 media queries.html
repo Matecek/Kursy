@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>   
+        body {
+            background: black;
+            color: white;  
+        }
+
+        /*
+            media queries - pozwala na zastosowanie określonych styli
+            jeśli jest spełniony warunek np minimalnej szerokości okna
+            przeglądarki, dzięki czemu ta sama strona może się
+            dostosować do różnych ekranów urządzeń, jest to podstawa
+            responsywnych stron
+        */
+
+        body {
+            font-size: 3.2rem;
+            background-color: silver;
+            color: black;
+        }
+
+        #breakpoint-info::after {
+            content: "breakpoint do 576px";
+        }
+
+        @media (min-width: 576px) {
+            body {
+                background-color: lightgreen;
+            }
+
+            #breakpoint-info::after {
+                content: "breakpoint od 576px np telefony itd"
+            }
+        }
+
+        @media (min-width: 768px) {
+            body {
+                background-color: yellow;
+            }
+
+            #breakpoint-info::after {
+                content: "breakpoint od 768px np większe telefony itd"
+            }
+        }
+
+        @media (min-width: 992px) {
+            body {
+                background-color: orange;
+            }
+
+            #breakpoint-info::after {
+                content: "breakpoint od 992px np tablety itd"
+            }
+        }
+
+        @media (min-width: 1200px) {
+            body {
+                background-color: orangered;
+            }
+
+            #breakpoint-info::after {
+                content: "breakpoint od 1200px np laptopy itd"
+            }
+        }
+
+        @media (min-width: 1300px) {
+            body {
+                background-color: blue;
+            }
+
+            #breakpoint-info::after {
+                content: "breakpoint od 1300px np komputery itd"
+            }
+        }
+    </style>
+</head>
+<body>       
+    <span id="breakpoint-info"></span>
+</body>
+</html>

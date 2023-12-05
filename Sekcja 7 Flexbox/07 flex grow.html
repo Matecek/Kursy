@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>   
+        body {
+            background: black;
+            color: white;  
+        }
+
+        * {
+            margin: 20px 2px;
+        }
+
+        /*
+            Flexbox - pozwala na ustawienie elementów w wierszu
+                      lub w kolumnie z stylem  
+            flex-direction - wartości: row, column, row-reverse, column-reverse 
+                      
+            flex-wrap - jak elementy mają być zawijane:
+             - nowrap - brak zawijania, skurczą się lub wyjdą poza kontener
+             - wrap - zawijanie do następnej linii
+             - wrap-reverse - zawijanie z dołu do góry
+
+            justify-content - wyrównanie elementów na osi głównej w wierszu:
+             - center - wycentrowane
+             - flex-start - na początku kontenera
+             - flex-end - na końcu kontenera
+             - space-between - elementy rozsuwają się od siebie na końce osi
+             - space-around - równomierne rozłożenie elementów
+                              z przestrzenią przed, między i za elementami
+             - space-evenly - równe rozłożenie elementów między sobą
+
+
+            align-items - wyrównanie elementów w pionie: flex-start
+                          flex-end, center, stretch (cała wysokość),
+                          baseline (na linii bazowej)
+
+            gap - to odległość między elementami
+            row-gap - między elementami w wierszu
+            column-gap - między elementami w kolumnie 
+
+            order - wskazanie kolejności elementów
+
+            flex-grow - określa o ile proporcjonalne ma się powiększyć
+                        element względem innych które mają
+                        flex-grow jako 1
+        */
+
+        .container {
+            display: flex;
+            flex-direction: row; 
+            flex-wrap: wrap;
+            justify-content: flex-start;
+            align-items: flex-start;  
+            column-gap: 20px;
+            border: 2px solid blue;
+        }
+
+        .container div {
+            margin: 5px;
+            width: 50px; 
+            height: 50px; 
+            flex-grow: 1;
+            background: green;
+            text-align: center;
+            line-height: 50px; 
+        }  
+
+        div.first{
+            flex-grow: 2;
+        }
+        
+        
+    </style>
+</head>
+<body>       
+    
+    <div class="container">
+        <div class="first">1</div>
+        <div class="second">2</div>
+        <div class="third">3</div> 
+    </div>
+    
+
+    
+    
+
+
+
+
+
+
+
+
+
+
+
+
+    
+
+
+    
+</body>
+</html>

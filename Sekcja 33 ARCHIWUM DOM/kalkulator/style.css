@@ -1,0 +1,52 @@
+input {
+    display: block;
+    width: 17rem;
+    margin: 0.3rem;
+    border: 1px solid silver;
+    font-size: 2rem;
+    text-align: right;
+}
+
+.numbers button, .operators button {
+    display: inline-block;
+    width: 3rem;
+    height: 3rem;
+    margin: 0.1rem;
+    border: 2px solid silver;
+    outline-width: 0;
+}
+
+button.big-button {
+    height: 6.2rem;
+}
+
+button.clear {
+    background-color: lightsalmon;
+}
+
+button.result {
+    background-color: lightskyblue;
+}
+
+button.clear:active {
+    background-color: salmon;
+}
+
+button.result:active {
+    background-color: skyblue;
+}
+
+button:hover {
+    border-color: grey;
+}
+
+button:active {
+    font-weight: 700;
+    background-color: silver;
+}
+
+.left-panel, .right-panel {
+    display: inline-block;
+    vertical-align: top;
+    margin: 0.3rem;
+}

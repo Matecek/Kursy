@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .header {border: 2px solid red;}
+        .left {float:left; margin: 5px;}
+        .right {float:right; margin: 5px;}
+        span {float: left; background-color: lightgray; padding: 5px; margin: 5px;}
+        .clearfix::after{
+            content: "";
+            display: block;
+            height: 0;
+            clear: both;
+        }
+        article, aside{
+            box-sizing: border-box;
+            padding: 10px;
+        }
+        .left-column{
+            width: 75%;
+            height: 300px;
+            float: left;
+            background-color: lightgreen;
+        }
+        .sidebar{
+            width: 25%;
+            height: 300px;
+            float: left;
+            background-color: lightgray;
+        }
+        .page{
+            margin: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div class="page">
+        <header class="header clearfix">
+            Lorem ipsum dolor sit, amet consectetur adipisicing elit.
+            <img class="right" src="https://cdn.pixabay.com/photo/2018/10/26/03/26/dodge-3773827__340.jpg" width="100">
+            At labore quis laboriosam earum voluptates dolores ea temporibus eaque, quae illo totam adipisci, repudiandae sapiente. Quam nesciunt corporis eos totam dicta!
+            <span>Lorem, ipsum 1.</span>
+            <span>Lorem, ipsum 2.</span>
+            <span>Lorem, ipsum 3.</span>
+            <span>Lorem, ipsum 4.</span>
+        </header>
+        <article class="left-column">
+            article
+        </article>
+        <aside class="sidebar">
+            aside
+        </aside>
+    </div>
+</body>
+</html>
