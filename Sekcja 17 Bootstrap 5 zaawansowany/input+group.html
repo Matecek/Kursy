@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/5.0.0-alpha1/css/bootstrap.min.css" integrity="sha384-r4NyP46KrjDleawBgD5tp8Y7UzmLA05oM1iAEQ17CSuDqnUK2+k9luXQOfXJCJ4I" crossorigin="anonymous">
+</head>
+<body>
+    <div class="container m-3">
+        <form action="">
+            <div class="input-group mb-3">
+                <span class="input-group-text" id="igName">Imię</span>
+                <input type="text" class="form-control" aria-label="Imię" aria-describedby="igName">
+            </div>
+
+            <div class="input-group mb-3">
+                <span class="input-group-text" id="igName">Dotacja</span>
+                <input type="text" class="form-control" aria-label="Wartość dotacji" >
+                <span class="input-group-text">.00 zł</span>
+            </div>
+
+            <div class="input-group mb-3">
+                <span class="input-group-text">Wiadomość</span>
+                <textarea class="form-control" aria-label="Wiadomość"></textarea>
+            </div>
+
+            <div class="input-group mb-3 input-group-sm">
+                <span class="input-group-text" id="igName">Dotacja</span>
+                <input type="text" class="form-control" aria-label="Wartość dotacji" >
+                <span class="input-group-text">.00 zł</span>
+            </div>
+
+            <div class="input-group mb-3 input-group-lg">
+                <span class="input-group-text" id="igName">Dotacja</span>
+                <input type="text" class="form-control" aria-label="Wartość dotacji" >
+                <span class="input-group-text">.00 zł</span>
+            </div>
+
+            <div class="input-group mb-3 input-group-sm">
+                <span class="input-group-text">Imię i nazwisko</span>
+                <input type="text" name="name" class="form-control" aria-label="Imię" >
+                <input type="text" name="surname" class="form-control" aria-label="Nazwisko" >
+            </div>
+
+            <div class="input-group mb-3 input-group-sm">
+                <span class="input-group-text">Nazwa ulicy</span>
+                <input type="text" name="streetName" class="form-control" aria-label="Ulica" >
+                <span class="input-group-text">Nr</span>
+                <input type="text" name="streetNr" class="form-control" aria-label="numer" >
+                <button class="btn btn-outline-primary" type="button">Pobier dane</button>
+            </div>
+
+            <div class="input-group mb-3">
+                <span class="input-group-text">Użytkownik</span>
+                <input type="text" class="form-control" aria-label="Użytkownik">
+                <button class="btn btn-dark dropdown-toggle" type="button"
+                   data-toggle="dropdown">Opcje</button>
+                <ul class="dropdown-menu">
+                    <li><a href="#" class="dropdown-item">Potwierdź email</a></li>
+                    <li><a href="#" class="dropdown-item">Wyślij potwierdzenie ponownie</a></li>
+                    <li><a href="#" class="dropdown-item">Podsumowanie konta</a></li>
+                    <li>
+                        <hr class="dropdown-divider">
+                    </li>
+                    <li><a href="#" class="dropdown-item link-danger">Kasuj usera</a></li>
+                </ul>
+            </div>
+
+            <div class="input-group mb-3">
+                <span class="input-group-text">Ilość lekcji w tygodniu:</span>
+                <select name="numLessons" aria-label="Ilość lekcji" id="" class="form-select">
+                    <option selected>Wybierz...</option>
+                    <option value="1">1</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                </select>
+                <button class="btn btn-outline-primary" type="button">Potwierdź</button>
+            </div>
+
+            <div class="input-group">
+                <span class="input-group-text">Avatar:</span>
+                <div class="form-file">
+                    <input type="file" class="form-file-input" id="igFileInput">
+                    <label for="igFileInput" class="form-file-label">
+                        <span class="form-file-text">Ścieżka do pliku...</span>
+                        <span class="form-file-button">Wybierz</span>
+                    </label>
+                </div>
+                <button class="btn btn-success" type="button">Wyślij</button>
+            </div>
+
+
+
+        </form>
+    </div>
+    
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+    <script type="text/javascript" src="https://stackpath.bootstrapcdn.com/bootstrap/5.0.0-alpha1/js/bootstrap.min.js" integrity="sha384-oesi62hOLfzrys4LxRF63OJCXdXDipiYWBnvTl9Y9/TRlw5xlKIEHpNyvvDShgf/" crossorigin="anonymous"></script>
+</body>
+</html>

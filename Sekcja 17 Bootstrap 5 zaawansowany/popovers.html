@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/5.0.0-alpha1/css/bootstrap.min.css" integrity="sha384-r4NyP46KrjDleawBgD5tp8Y7UzmLA05oM1iAEQ17CSuDqnUK2+k9luXQOfXJCJ4I" crossorigin="anonymous">
+</head>
+<body>
+
+    <button data-toggle="popover" class="btn btn-primary m-2"
+        title="Komunikat #1"
+        data-content="Treść komunikatu">
+        button 1
+    </button>
+    <button data-toggle="popover" class="btn btn-danger m-2"
+        title="Komunikat #2"
+        data-content="Treść komunikatu"
+        data-placement="bottom">
+        button 2
+    </button>
+
+    <script>
+        window.onload = function() {
+            let popoversNodes = document.querySelectorAll("[data-toggle='popover']");
+            console.log(popoversNodes);
+            let popovers = [];
+            for(const el of popoversNodes){
+                popovers.push( new bootstrap.Popover(el) );
+            }
+        }
+    </script>
+    
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+    <script type="text/javascript" src="https://stackpath.bootstrapcdn.com/bootstrap/5.0.0-alpha1/js/bootstrap.min.js" integrity="sha384-oesi62hOLfzrys4LxRF63OJCXdXDipiYWBnvTl9Y9/TRlw5xlKIEHpNyvvDShgf/" crossorigin="anonymous"></script>
+</body>
+</html>

@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/5.0.0-alpha1/css/bootstrap.min.css" integrity="sha384-r4NyP46KrjDleawBgD5tp8Y7UzmLA05oM1iAEQ17CSuDqnUK2+k9luXQOfXJCJ4I" crossorigin="anonymous">
+
+    <script>
+        function addAlert(type, text, timeout){
+            type = type || "primary";
+            text = text || "Lorem ipsum dolor sit amet.";
+            timeout = timeout || 2000;
+
+            let types = ["primary", "secondary", "success", "danger", "warning",
+                         "info", "light", "dark"];
+            type = types[ Math.floor(Math.random() * types.length) ];
+
+            let alertNode = document.createElement("div");
+            alertNode.classList.add("alert", "alert-"+type, "alert-dismissible", "fade", "show");
+            alertNode.setAttribute("role", "alert");
+
+            let alertCode = `
+                <h4 class="alert-heading">.alert-${type}</h4>
+                <p> ${text} </p>
+                <button type="button" class="close" data-dismiss="alert" aria-label="close">
+                    <span>&times;</span>
+                </button>    
+            `;
+
+            let alertInstance = new bootstrap.Alert(alertNode);
+
+            setTimeout(function(){
+                alertInstance.close();
+            }, timeout);
+
+            alertNode.addEventListener("close.bs.alert", function(){
+                console.log("close.bs.alert:  alert-"+type+" zamkniety");
+            });
+
+            alertNode.addEventListener("closed.bs.alert", function(){
+                console.log("closed.bs.alert:  alert-"+type+" zamkniety");
+            });
+
+            alertNode.innerHTML = alertCode;
+            let alertContainer = document.getElementById("alerts");
+            // alertContainer.appendChild(alertNode); // na koniec
+            alertContainer.prepend(alertNode); 
+        }
+    </script>
+</head>
+<body> 
+
+    <div class="container m-2">
+        <button class="btn-primary m-1" onclick="addAlert();">Dodaj alert.</button>
+    </div>
+
+    <div id="alerts" class="container m-1">
+        <div class="alert alert-primary alert-dismissible fade show" role="alert">
+            <h4 class="alert-heading">.alert-primary</h4>
+            <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Ea, assumenda.
+                <a href="#" class="alert-link">link alertu</a>                
+            </p>
+            <button class="close" type="button" data-dismiss="alert" aria-label="close">
+                <span>&times;</span>                
+            </button>
+        </div>
+        <div class="alert alert-danger alert-dismissible fade show" role="alert">
+            <h4 class="alert-heading">.alert-danger</h4>
+            <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Ea, assumenda.
+                <a href="#" class="alert-link">link alertu</a>                
+            </p>
+            <button class="close" type="button" data-dismiss="alert" aria-label="close">
+                <span>&times;</span>                
+            </button>
+        </div>
+        <div class="alert alert-success alert-dismissible fade show" role="alert">
+            <h4 class="alert-heading">.alert-success</h4>
+            <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Ea, assumenda.
+                <a href="#" class="alert-link">link alertu</a>                
+            </p>
+            <button class="close" type="button" data-dismiss="alert" aria-label="close">
+                <span>&times;</span>                
+            </button>
+        </div>
+    </div>
+    
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+    <script type="text/javascript" src="https://stackpath.bootstrapcdn.com/bootstrap/5.0.0-alpha1/js/bootstrap.min.js" integrity="sha384-oesi62hOLfzrys4LxRF63OJCXdXDipiYWBnvTl9Y9/TRlw5xlKIEHpNyvvDShgf/" crossorigin="anonymous"></script>
+</body>
+</html>

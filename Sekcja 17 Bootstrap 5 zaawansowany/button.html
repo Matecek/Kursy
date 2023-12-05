@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/5.0.0-alpha1/css/bootstrap.min.css" integrity="sha384-r4NyP46KrjDleawBgD5tp8Y7UzmLA05oM1iAEQ17CSuDqnUK2+k9luXQOfXJCJ4I" crossorigin="anonymous">
+    <script>
+
+        window.onload = function() {
+            let buttons = document.getElementsByTagName("button");
+            let toggleBtnNode = buttons[0];
+            let disposeBtnNode = buttons[1];
+            let testBtnNode = buttons[2];
+
+            let testBtnInstance = new bootstrap.Button(testBtnNode);
+
+            toggleBtnNode.addEventListener("click", function(){
+                testBtnInstance.toggle();
+            });
+
+            disposeBtnNode.addEventListener("click", function(){
+                testBtnInstance.dispose();
+                testBtnNode.remove();
+            });
+        };
+        
+    </script>
+</head>
+<body>
+
+    <div class="container m-3">
+        <button type="button" class="btn btn-success">toggle</button>
+        <button type="button" class="btn btn-danger">dispose</button>
+        <button type="button" class="btn btn-success">test button</button>
+    </div>
+    
+    <hr>
+
+    <div class="container m-2">
+        <button class="btn btn-primary" type="button">primary</button>
+        <button class="btn btn" type="button">podstawowy</button>
+        <button class="btn btn-success" type="button">success</button>
+        <button class="btn btn-danger" type="button">danger</button>
+        <button class="btn btn-info" type="button">info</button>
+        <button class="btn btn-warning" type="button">warning</button>
+        <button class="btn btn-dark" type="button">dark</button>
+        <button class="btn btn-light" type="button">light</button>
+    </div>
+
+    <hr>
+    <div class="container">
+        <a href="#" role="button" class="btn btn-info"> button jako link </a>
+        <input class="btn btn-secondary" type="button" value="input 1">
+    </div>
+
+    <hr>
+    <div class="container m-2">
+        <button class="btn btn-outline-primary" type="button">primary</button>
+        <button class="btn" type="button">podstawowy</button>
+        <button class="btn btn-outline-success" type="button">success</button>
+        <button class="btn btn-outline-danger" type="button">danger</button>
+        <button class="btn btn-outline-info" type="button">info</button>
+        <button class="btn btn-outline-warning" type="button">warning</button>
+        <button class="btn btn-outline-dark" type="button">dark</button>
+        <button class="btn btn-outline-light" type="button">light</button>
+    </div>
+
+    <hr>
+    <div class="container m-2">
+        <button class="btn btn-outline-primary btn-sm" type="button">primary</button>
+        <button class="btn btn-lg" type="button">podstawowy</button>
+        <button class="btn btn-outline-success" type="button">success</button>
+        <button class="btn btn-outline-danger btn-lg" type="button">danger</button>
+        <button class="btn btn-outline-info" type="button">info</button>
+        <button class="btn btn-outline-warning btn-sm disabled" type="button">warning</button>
+        <button class="btn btn-outline-dark btn-block disabled" type="button">dark</button>
+        <button class="btn btn-outline-light" type="button">light</button>
+    </div>
+
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+    <script type="text/javascript" src="https://stackpath.bootstrapcdn.com/bootstrap/5.0.0-alpha1/js/bootstrap.min.js" integrity="sha384-oesi62hOLfzrys4LxRF63OJCXdXDipiYWBnvTl9Y9/TRlw5xlKIEHpNyvvDShgf/" crossorigin="anonymous"></script>
+</body>
+</html>
