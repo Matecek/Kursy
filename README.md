@@ -1,2 +1,2 @@
 # Kursy
-Są tutaj moje wszystkie kursy podzielone w branch.
+## Są tutaj moje wszystkie kursy podzielone w branch.
