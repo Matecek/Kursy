@@ -1,2 +1,2 @@
 # Kursy
-## Są tutaj moje wszystkie kursy podzielone w branch.
+## Repozytorium zostało stworzone do przychowywania wszystkich moich kursów w jedym miejscu
