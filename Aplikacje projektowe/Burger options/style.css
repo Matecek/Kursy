@@ -1,0 +1,53 @@
+body {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background-color: green;
+}
+.burger {
+    width: 60%;
+    max-width: 400px;
+}
+
+.burger-item {
+    background-color: white;
+    border: 1px solid #ddd;
+    margin-bottom: 5px;
+    border-radius: 5px;
+}
+
+.burger-header {
+    padding: 15px;
+    cursor: pointer;
+    font-weight: bold;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    user-select: none;
+}
+.burger-header::after {
+    content: "\002B";
+    font-size: 20px;
+    transition: transform 0.3s ease-out;
+}
+
+.burger-content {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease-out;
+    padding: 0 15px;
+}
+
+.burger-header.active::after {
+    content: "\2212";
+    transform: rotate(0);
+}
+
+.burger-header.active + .burger-content {
+    max-height: 1000px;
+    padding: 15px;
+}

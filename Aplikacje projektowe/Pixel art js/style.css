@@ -1,0 +1,54 @@
+body {
+    margin: 0;
+    padding: 0;
+    background: linear-gradient(to bottom, #6ee7b7, #3b82f6);
+    font-family: 'Arial', sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    height: 100vh;
+}
+
+.app-container {
+    margin-top: 20px;
+    width: 70%;
+    max-width: 800px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.toolbar {
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+    margin-bottom: 20px;
+}
+
+button {
+    background-color: #4f46e5;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+button:hover {
+    background-color: #4338ca;
+}
+
+.canvas-container {
+    display: grid;
+    grid-template-columns: repeat(40, 10px); 
+    grid-template-rows: repeat(40, 10px); 
+    gap: 1px;
+}
+
+.canvas-pixel {
+    width: 10px; 
+    height: 10px; 
+    background-color: #fff;
+    border: 1px solid #eee;
+    cursor: pointer;
+}
