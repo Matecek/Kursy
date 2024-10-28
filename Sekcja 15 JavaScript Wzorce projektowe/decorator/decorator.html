@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <script>
+
+function User(name, addr) {
+    this.name = name;
+    this.addr = addr;
+}
+
+let user = new User("Ola", "Krk");
+
+function decorateUserToEmployee(user, data){
+    user.company = data.company || "Default Ltd";
+    user.salary = data.salary || 5000;
+    user.tasks = [];
+    user.addTask = function(task) {
+        this.tasks.push(task);
+    }
+    user.listTasks = function() {
+        this.tasks.forEach(element => console.log(element.title) );
+    }
+
+    return user;
+}
+
+let data = { company: "Some Company Ltd" };
+let employee = decorateUserToEmployee(user, data);
+console.log(employee);
+
+employee.addTask( {title:"Zadanie 1"} );
+employee.addTask( {title:"Zadanie 2"} );
+employee.addTask( {title:"Zadanie 3"} );
+employee.listTasks();
+
+
+
+
+// laptop
+function LaptopConfig() {
+    this.cost = function() {
+        return 2000;
+    }
+    this.screenSize = function() {
+        return 15;
+    }
+
+    this.info = function() {
+        console.log("cost:" + this.cost() + " screenSize:" + this.screenSize() );
+    }
+}
+
+function increaseScreenSize(comp) {
+    let basicCost = comp.cost();
+    let basicScreenSize = comp.screenSize();
+    
+    if(basicScreenSize <= 16) {
+        comp.screenSize = function() {
+            return  basicScreenSize + 1;
+        }
+        comp.cost = function() {
+            return basicCost + 300;
+        }
+    }
+}
+
+function increaseRam(comp) {
+    let basicCost = comp.cost();
+    comp.cost = function() {
+        return basicCost + 500;
+    }
+}
+
+function addInsurance(comp) {
+    let basicCost = comp.cost();
+    comp.cost = function () {
+        return basicCost + (basicCost * 0.1);
+    }
+}
+
+
+let laptop = new LaptopConfig();
+laptop.info();
+
+increaseScreenSize(laptop);
+increaseScreenSize(laptop);
+addInsurance(laptop);
+laptop.info();
+
+
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

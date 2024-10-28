@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <script>
+
+// przykład konstruktor Task oraz TaskBuilder
+
+function Task(name, description, isDone){
+    this.name = name;
+    this.description = description;
+    this.isDone = isDone;
+}
+
+function TaskBuilder() {
+    let name, description, isDone;
+
+    return {
+        setName: function(name) {
+            this.name = name;
+            return this;
+        },
+        setDescription: function(description) {
+            this.description = description;
+            return this;
+        },
+        setDone: function(done) {
+            this.isDone = done;
+            return this;
+        },
+        build: function () {
+            return new Task(this.name, this.description, this.isDone);
+        }
+    }
+}
+
+let task = (new TaskBuilder()).setName("Zadanie 1")
+        .setDescription("opis").setDone(true).build();
+console.log(task);
+// {name: "Zadanie 1", description: "opis", isDone: true}
+
+
+    </script>
+
+</head>
+<body>
+    
+</body>
+</html>
