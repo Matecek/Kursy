@@ -1,0 +1,13 @@
+{
+  "name": "dao",
+  "version": "1.0.0",
+  "description": "",
+  "main": "address.js",
+  "type": "module",
+  "scripts": {
+    "test": "jasmine"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
+}

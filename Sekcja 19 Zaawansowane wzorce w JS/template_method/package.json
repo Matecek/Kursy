@@ -1,0 +1,13 @@
+{
+  "name": "template_method",
+  "version": "1.0.0",
+  "description": "",
+  "main": "drinkTemplate.js",
+  "type": "module",
+  "scripts": {
+    "test": "jasmine"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
+}
